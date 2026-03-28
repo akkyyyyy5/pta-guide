@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>PTAガイド デザイン比較</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #1a1a2e;
+            color: #fff;
+            line-height: 1.7
+        }
+
+        /* ── 選択タブ ── */
+        .tab-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #1a1a2e;
+            padding: 16px 20px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+        }
+
+        .tab-btn {
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .3s;
+            font-family: inherit
+        }
+
+        .tab-btn:hover {
+            border-color: rgba(255, 255, 255, 0.5)
+        }
+
+        .tab-btn.active {
+            background: white;
+            color: #1a1a2e;
+            border-color: white
+        }
+
+        .tab-hint {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 12px;
+            padding: 8px 0 0
+        }
+
+        /* ── プレビューコンテナ ── */
+        .preview-section {
+            display: none;
+            padding: 32px 20px 60px
+        }
+
+        .preview-section.active {
+            display: block
+        }
+
+        .preview-label {
+            text-align: center;
+            margin-bottom: 24px
+        }
+
+        .preview-label h2 {
+            font-size: 24px;
+            margin-bottom: 8px
+        }
+
+        .preview-label p {
+            font-size: 14px;
+            opacity: 0.6
+        }
+
+        /* ── モックアップ枠 ── */
+        .mock-frame {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5)
+        }
+
+        .mock-topbar {
+            background: #e0e0e0;
+            padding: 8px 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .mock-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%
+        }
+
+        .mock-dot.r {
+            background: #ff5f57
+        }
+
+        .mock-dot.y {
+            background: #febc2e
+        }
+
+        .mock-dot.g {
+            background: #28c840
+        }
+
+        .mock-addr {
+            flex: 1;
+            background: white;
+            border-radius: 20px;
+            padding: 4px 14px;
+            font-size: 11px;
+            color: #666;
+            margin-left: 8px
+        }
+
+        /* ── 共通パーツ ── */
+        .hero-area {
+            padding: 48px 24px 56px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero-area::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Ccircle cx='30' cy='30' r='18'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+        }
+
+        .hero-area>* {
+            position: relative;
+            z-index: 1
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50px;
+            padding: 5px 18px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 16px
+        }
+
+        .hero-area h1 {
+            font-size: 32px;
+            font-weight: 900;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15)
+        }
+
+        .hero-area h1 span {
+            font-size: 20px;
+            font-weight: 700;
+            opacity: 0.9
+        }
+
+        .hero-sub {
+            font-size: 14px;
+            opacity: 0.9;
+            max-width: 500px;
+            margin: 0 auto 20px
+        }
+
+        .chip-row {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        .chip {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 5px 14px;
+            font-size: 12px;
+            font-weight: 700
+        }
+
+        .page-body {
+            padding: 32px 24px 40px
+        }
+
+        .section-label {
+            font-size: 16px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 32px
+        }
+
+        @media(max-width:700px) {
+            .card-grid {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+
+        .tool-card {
+            border-radius: 12px;
+            padding: 20px 16px;
+            border-top: 4px solid;
+            transition: transform .2s
+        }
+
+        .tool-card:hover {
+            transform: translateY(-3px)
+        }
+
+        .tool-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: white
+        }
+
+        .tool-card h4 {
+            font-size: 14px;
+            font-weight: 900;
+            margin-bottom: 2px
+        }
+
+        .tool-card .price {
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 6px
+        }
+
+        .tool-card p {
+            font-size: 12px;
+            line-height: 1.5;
+            margin-bottom: 12px
+        }
+
+        .tool-card .card-btn {
+            display: block;
+            text-align: center;
+            border-radius: 6px;
+            padding: 7px;
+            font-size: 12px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none
+        }
+
+        .finish-area {
+            text-align: center;
+            border-radius: 16px;
+            padding: 32px 20px;
+            margin-top: 24px
+        }
+
+        .finish-area .emoji {
+            font-size: 40px;
+            margin-bottom: 10px
+        }
+
+        .finish-area h3 {
+            font-size: 18px;
+            font-weight: 900;
+            margin-bottom: 8px
+        }
+
+        .finish-area p {
+            font-size: 13px;
+            opacity: 0.8
+        }
+
+        /* ── 所感カード ── */
+        .comment-box {
+            max-width: 800px;
+            margin: 24px auto 0;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px 24px
+        }
+
+        .comment-box h3 {
+            font-size: 15px;
+            margin-bottom: 8px
+        }
+
+        .comment-box p {
+            font-size: 13px;
+            opacity: 0.7;
+            line-height: 1.8
+        }
+
+        .comment-box .tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            padding: 2px 10px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-right: 6px;
+            margin-bottom: 4px
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="text-align:center;padding:32px 20px 8px">
+        <h1 style="font-size:22px;font-weight:900;">🎨 PTAガイド デザイン比較</h1>
+        <p style="font-size:13px;opacity:0.5;margin-top:6px;">3つの配色案をクリックして見比べてください</p>
+    </div>
+
+    <div class="tab-bar">
+        <button class="tab-btn active" onclick="show('a')">🌿 案A ナチュラル</button>
+        <button class="tab-btn" onclick="show('b')">🎪 案B ポップ</button>
+        <button class="tab-btn" onclick="show('c')">🏫 案C モダン</button>
+    </div>
+
+    <!-- ========== 案A ナチュラル系 ========== -->
+    <div class="preview-section active" id="sec-a">
+        <div class="preview-label">
+            <h2>🌿 案A：親しみやすいナチュラル系</h2>
+            <p>学校の庭の新緑のような、安心感 ＋ 爽やかさ</p>
+        </div>
+        <div class="mock-frame">
+            <div class="mock-topbar">
+                <div class="mock-dot r"></div>
+                <div class="mock-dot y"></div>
+                <div class="mock-dot g"></div>
+                <div class="mock-addr">🔒 pta-guide.example.com</div>
+            </div>
+            <!-- ヒーロー -->
+            <div class="hero-area" style="background:linear-gradient(135deg,#00897B 0%,#0288D1 100%);">
+                <div class="hero-badge">PTA デジタル推進ガイド 2026</div>
+                <h1>PTAデジタルツール<br><span>かんたん活用ガイド</span></h1>
+                <p class="hero-sub">厳選されたツールで PTA 運営をぐっとラクに。<br><strong>すべてのツールが PTAなら無料で利用可能です。</strong></p>
+                <div class="chip-row">
+                    <span class="chip">✅ スマホ対応</span>
+                    <span class="chip">✅ 無料で使える</span>
+                    <span class="chip">✅ 操作画面付き</span>
+                </div>
+            </div>
+            <!-- ページ本体 -->
+            <div class="page-body" style="background:#F5FBF8;">
+                <div class="section-label" style="color:#00897B;border-color:#B2DFDB;">🔷 Google の便利なツール（すべて無料）</div>
+                <div class="card-grid">
+                    <div class="tool-card" style="background:white;border-color:#43A047;">
+                        <div class="tool-icon" style="background:linear-gradient(135deg,#43A047,#66BB6A);">📋</div>
+                        <h4 style="color:#2E7D32;">Googleフォーム</h4>
+                        <div class="price" style="color:#43A047;">💰 PTAなら 0円</div>
+                        <p style="color:#5f6368;">アンケートや出欠確認をスマホで一括集計</p>
+                        <a class="card-btn" style="background:#43A047;" href="#">詳しく見る →</a>
+                    </div>
+                    <div class="tool-card" style="background:white;border-color:#1E88E5;">
+                        <div class="tool-icon" style="background:linear-gradient(135deg,#1E88E5,#42A5F5);">📝</div>
+                        <h4 style="color:#1565C0;">Googleドキュメント</h4>
+                        <div class="price" style="color:#1E88E5;">💰 PTAなら 0円</div>
+                        <p style="color:#5f6368;">議事録を複数人で同時に編集</p>
+                        <a class="card-btn" style="background:#1E88E5;" href="#">詳しく見る →</a>
+                    </div>
+                    <div class="tool-card" style="background:white;border-color:#FFA000;">
+                        <div class="tool-icon" style="background:linear-gradient(135deg,#FFA000,#FFB74D);">📁</div>
+                        <h4 style="color:#E65100;">Googleドライブ</h4>
+                        <div class="price" style="color:#FFA000;">💰 PTAなら 0円</div>
+                        <p style="color:#5f6368;">写真や資料をまとめて安全に保管</p>
+                        <a class="card-btn" style="background:#FFA000;" href="#">詳しく見る →</a>
+                    </div>
+                </div>
+                <div class="section-label" style="color:#00897B;border-color:#B2DFDB;">🎨 制作・調整ツール</div>
+                <div class="card-grid" style="grid-template-columns:repeat(2,1fr);">
+                    <div class="tool-card" style="background:white;border-color:#E53935;">
+                        <div class="tool-icon" style="background:linear-gradient(135deg,#E53935,#EF5350);">🎨</div>
+                        <h4 style="color:#C62828;">Canva</h4>
+                        <div class="price" style="color:#E53935;">💰 基本無料</div>
+                        <p style="color:#5f6368;">プロ並みのチラシを数分で作成</p>
+                        <a class="card-btn" style="background:#E53935;" href="#">詳しく見る →</a>
+                    </div>
+                    <div class="tool-card" style="background:white;border-color:#00897B;">
+                        <div class="tool-icon" style="background:linear-gradient(135deg,#00897B,#4DB6AC);">📅</div>
+                        <h4 style="color:#00695C;">調整さん</h4>
+                        <div class="price" style="color:#00897B;">💰 0円・登録不要</div>
+                        <p style="color:#5f6368;">日程調整がリンク1つで完了</p>
+                        <a class="card-btn" style="background:#00897B;" href="#">詳しく見る →</a>
+                    </div>
+                </div>
+                <div class="finish-area" style="background:linear-gradient(135deg,#E0F2F1,#E3F2FD);">
+                    <div class="emoji">🚀</div>
+                    <h3 style="color:#00695C;">まずは1つから始めましょう！</h3>
+                    <p style="color:#00796B;">一度に全部やろうとしなくて大丈夫。気になるものからどうぞ。</p>
+                </div>
+            </div>
+        </div>
+        <div class="comment-box">
+            <h3>💡 この配色のポイント</h3>
+            <p><span class="tag">ティール × ブルー</span><span class="tag">安心感</span><span class="tag">爽やか</span><br>
+                自然を連想させるグリーン系で、「信頼」「安心」が伝わります。落ち着いた雰囲気のPTAにぴったり。ミントホワイトの背景が清潔感を演出します。</p>
+        </div>
+    </div>
+
+    <!-- ========== 案B ポップ系 ========== -->
+    <div class="preview-section" id="sec-b">
+        <div class="preview-label">
+            <h2>🎪 案B：ポップで楽しいスクール系</h2>
+            <p>学校行事のワクワク感・子どもと一緒に楽しむイメージ</p>
+        </div>
+        <div class="mock-frame">
+            <div class="mock-topbar">
+                <div class="mock-dot r"></div>
+                <div class="mock-dot y"></div>
+                <div class="mock-dot g"></div>
+                <div class="mock-addr">🔒 pta-guide.example.com</div>
+            </div>
+            <div class="hero-area" style="background:linear-gradient(135deg,#FF6D00 0%,#E91E63 100%);">
+                <div class="hero-badge">PTA デジタル推進ガイド 2026</div>
+                <h1>PTAデジタルツール<br><span>かんたん活用ガイド</span></h1>
+                <p class="hero-sub">厳選されたツールで PTA 運営をぐっとラクに。<br><strong>すべてのツールが PTAなら無料で利用可能です。</strong></p>
+                <div class="chip-row">
+                    <span class="chip">✅ スマホ対応</span>
+                    <span class="chip">✅ 無料で使える</span>
+                    <span class="chip">✅ 操作画面付き</span>
+                </div>
+            </div>
+            <div class="page-body" style="background:#FFFBF5;">
+                <div class="section-label" style="color:#FF6D00;border-color:#FFE0B2;">🔷 Google の便利なツール（すべて無料）</div>
+                <div class="card-grid">
+                    <div class="tool-card" style="background:white;border-color:#039BE5;">
+                        <div class="tool-icon" style="background:linear-gradient(135deg,#039BE5,#29B6F6);">📋</div>
+                        <h4 style="color:#01579B;">Googleフォーム</h4>
+                        <div class="price" style="color:#039BE5;">💰 PTAなら 0円</div>
+                        <p style="color:#5f6368;">アンケートや出欠確認をスマホで一括集計</p>
+                        <a class="card-btn" style="background:#039BE5;" href="#">詳しく見る →</a>
+                    </div>
+                    <div class="tool-card" style="background:white;border-color:#FFD600;">
+                        <div class="tool-icon" style="background:linear-gradient(135deg,#FFD600,#FFEE58);">📝</div>
+                        <h4 style="color:#F57F17;">Googleドキュメント</h4>
+                        <div class="price" style="color:#F9A825;">💰 PTAなら 0円</div>
+                        <p style="color:#5f6368;">議事録を複数人で同時に編集</p>
+                        <a class="card-btn" style="background:#F9A825;" href="#">詳しく見る →</a>
+                    </div>
+                    <div class="tool-card" style="background:white;border-color:#00BFA5;">
+                        <div class="tool-icon" style="background:linear-gradient(135deg,#00BFA5,#64FFDA);">📁</div>
+                        <h4 style="color:#00796B;">Googleドライブ</h4>
+                        <div class="price" style="color:#00BFA5;">💰 PTAなら 0円</div>
+                        <p style="color:#5f6368;">写真や資料をまとめて安全に保管</p>
+                        <a class="card-btn" style="background:#00BFA5;" href="#">詳しく見る →</a>
+                    </div>
+                </div>
+                <div class="section-label" style="color:#E91E63;border-color:#F8BBD0;">🎨 制作・調整ツール</div>
+                <div class="card-grid" style="grid-template-columns:repeat(2,1fr);">
+                    <div class="tool-card" style="background:white;border-color:#E91E63;">
+                        <div class="tool-icon" style="background:linear-gradient(135deg,#E91E63,#F06292);">🎨</div>
+                        <h4 style="color:#AD1457;">Canva</h4>
+                        <div class="price" style="color:#E91E63;">💰 基本無料</div>
+                        <p style="color:#5f6368;">プロ並みのチラシを数分で作成</p>
+                        <a class="card-btn" style="background:#E91E63;" href="#">詳しく見る →</a>
+                    </div>
+                    <div class="tool-card" style="background:white;border-color:#FF6D00;">
+                        <div class="tool-icon" style="background:linear-gradient(135deg,#FF6D00,#FF9800);">📅</div>
+                        <h4 style="color:#E65100;">調整さん</h4>
+                        <div class="price" style="color:#FF6D00;">💰 0円・登録不要</div>
+                        <p style="color:#5f6368;">日程調整がリンク1つで完了</p>
+                        <a class="card-btn" style="background:#FF6D00;" href="#">詳しく見る →</a>
+                    </div>
+                </div>
+                <div class="finish-area" style="background:linear-gradient(135deg,#FFF3E0,#FCE4EC);">
+                    <div class="emoji">🎉</div>
+                    <h3 style="color:#E65100;">まずは1つから始めましょう！</h3>
+                    <p style="color:#BF360C;">一度に全部やろうとしなくて大丈夫。気になるものからどうぞ。</p>
+                </div>
+            </div>
+        </div>
+        <div class="comment-box">
+            <h3>💡 この配色のポイント</h3>
+            <p><span class="tag">オレンジ × ピンク</span><span class="tag">ワクワク</span><span class="tag">エネルギッシュ</span><br>
+                バザーや運動会を連想させる、一番「楽しそう！」な配色。カードの色がカラフルで、見ているだけで元気が出ます。デジタル化を「面倒」ではなく「楽しそう」に見せたい場合に最適。</p>
+        </div>
+    </div>
+
+    <!-- ========== 案C モダンスクール系 ========== -->
+    <div class="preview-section" id="sec-c">
+        <div class="preview-label">
+            <h2>🏫 案C：信頼感のあるモダンスクール系</h2>
+            <p>現行のパープル系を活かしつつ、温かみとワクワク感をプラス</p>
+        </div>
+        <div class="mock-frame">
+            <div class="mock-topbar">
+                <div class="mock-dot r"></div>
+                <div class="mock-dot y"></div>
+                <div class="mock-dot g"></div>
+                <div class="mock-addr">🔒 pta-guide.example.com</div>
+            </div>
+            <div class="hero-area" style="background:linear-gradient(135deg,#5E35B1 0%,#00ACC1 100%);">
+                <div class="hero-badge">PTA デジタル推進ガイド 2026</div>
+                <h1>PTAデジタルツール<br><span>かんたん活用ガイド</span></h1>
+                <p class="hero-sub">厳選されたツールで PTA 運営をぐっとラクに。<br><strong>すべてのツールが PTAなら無料で利用可能です。</strong></p>
+                <div class="chip-row">
+                    <span class="chip">✅ スマホ対応</span>
+                    <span class="chip">✅ 無料で使える</span>
+                    <span class="chip">✅ 操作画面付き</span>
+                </div>
+            </div>
+            <div class="page-body" style="background:#F8F6FC;">
+                <div class="section-label" style="color:#5E35B1;border-color:#D1C4E9;">🔷 Google の便利なツール（すべて無料）</div>
+                <div class="card-grid">
+                    <div class="tool-card" style="background:white;border-color:#EC407A;">
+                        <div class="tool-icon" style="background:linear-gradient(135deg,#EC407A,#F48FB1);">📋</div>
+                        <h4 style="color:#AD1457;">Googleフォーム</h4>
+                        <div class="price" style="color:#EC407A;">💰 PTAなら 0円</div>
+                        <p style="color:#5f6368;">アンケートや出欠確認をスマホで一括集計</p>
+                        <a class="card-btn" style="background:#EC407A;" href="#">詳しく見る →</a>
+                    </div>
+                    <div class="tool-card" style="background:white;border-color:#5E35B1;">
+                        <div class="tool-icon" style="background:linear-gradient(135deg,#5E35B1,#7E57C2);">📝</div>
+                        <h4 style="color:#4527A0;">Googleドキュメント</h4>
+                        <div class="price" style="color:#5E35B1;">💰 PTAなら 0円</div>
+                        <p style="color:#5f6368;">議事録を複数人で同時に編集</p>
+                        <a class="card-btn" style="background:#5E35B1;" href="#">詳しく見る →</a>
+                    </div>
+                    <div class="tool-card" style="background:white;border-color:#FFB300;">
+                        <div class="tool-icon" style="background:linear-gradient(135deg,#FFB300,#FFD54F);">📁</div>
+                        <h4 style="color:#FF8F00;">Googleドライブ</h4>
+                        <div class="price" style="color:#FFB300;">💰 PTAなら 0円</div>
+                        <p style="color:#5f6368;">写真や資料をまとめて安全に保管</p>
+                        <a class="card-btn" style="background:#FFB300;" href="#">詳しく見る →</a>
+                    </div>
+                </div>
+                <div class="section-label" style="color:#00ACC1;border-color:#B2EBF2;">🎨 制作・調整ツール</div>
+                <div class="card-grid" style="grid-template-columns:repeat(2,1fr);">
+                    <div class="tool-card" style="background:white;border-color:#00ACC1;">
+                        <div class="tool-icon" style="background:linear-gradient(135deg,#00ACC1,#4DD0E1);">🎨</div>
+                        <h4 style="color:#00838F;">Canva</h4>
+                        <div class="price" style="color:#00ACC1;">💰 基本無料</div>
+                        <p style="color:#5f6368;">プロ並みのチラシを数分で作成</p>
+                        <a class="card-btn" style="background:#00ACC1;" href="#">詳しく見る →</a>
+                    </div>
+                    <div class="tool-card" style="background:white;border-color:#26A69A;">
+                        <div class="tool-icon" style="background:linear-gradient(135deg,#26A69A,#80CBC4);">📅</div>
+                        <h4 style="color:#00695C;">調整さん</h4>
+                        <div class="price" style="color:#26A69A;">💰 0円・登録不要</div>
+                        <p style="color:#5f6368;">日程調整がリンク1つで完了</p>
+                        <a class="card-btn" style="background:#26A69A;" href="#">詳しく見る →</a>
+                    </div>
+                </div>
+                <div class="finish-area" style="background:linear-gradient(135deg,#EDE7F6,#E0F7FA);">
+                    <div class="emoji">🚀</div>
+                    <h3 style="color:#4527A0;">まずは1つから始めましょう！</h3>
+                    <p style="color:#5E35B1;">一度に全部やろうとしなくて大丈夫。気になるものからどうぞ。</p>
+                </div>
+            </div>
+        </div>
+        <div class="comment-box">
+            <h3>💡 この配色のポイント</h3>
+            <p><span class="tag">パープル × ティール</span><span class="tag">知的</span><span class="tag">温かみ</span><br>
+                現行デザインのパープル系を引き継ぎつつ、ピンクとゴールドで温かみをプラス。変更量が最小限なので、今のガイドからスムーズに移行できます。「堅すぎず、軽すぎない」ちょうどよいバランス。</p>
+        </div>
+    </div>
+
+    <script>
+        function show(id) {
+            document.querySelectorAll('.preview-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('sec-' + id).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>

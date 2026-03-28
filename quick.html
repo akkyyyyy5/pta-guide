@@ -1,0 +1,3006 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PTAデジタルツール かんたん活用ガイド（簡易版） | PTAデジタル推進</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+
+        :root {
+
+            --google-blue: #1a73e8;
+
+            --google-purple: #5E35B1;
+
+            --google-purple-light: #7C4DFF;
+
+            --google-green: #0f9d58;
+
+            --google-red: #d93025;
+
+            --google-yellow: #f9ab00;
+
+            --bg: #F8F6FC;
+
+            --card-bg: #ffffff;
+
+            --text-main: #202124;
+
+            --text-sub: #5f6368;
+
+            --border: #dadce0;
+
+            --step-active: #5E35B1;
+
+            --font: 'Noto Sans JP', sans-serif;
+
+        }
+
+
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+
+
+        body {
+
+            font-family: var(--font);
+
+            background: var(--bg);
+
+            color: var(--text-main);
+
+            line-height: 1.7;
+
+        }
+
+
+
+        /* �w�b�_�[ */
+
+        .hero {
+
+            background: linear-gradient(135deg, #5E35B1 0%, #7C4DFF 50%, #e91e63 100%);
+
+            color: white;
+
+            padding: 60px 24px 80px;
+
+            text-align: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+
+        .hero::before {
+
+            content: '';
+
+            position: absolute;
+
+            inset: 0;
+
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+        }
+
+
+
+        .hero-badge {
+
+            display: inline-block;
+
+            background: rgba(255, 255, 255, 0.2);
+
+            border: 1px solid rgba(255, 255, 255, 0.4);
+
+            border-radius: 50px;
+
+            padding: 6px 20px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.05em;
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .hero h1 {
+
+            font-size: clamp(28px, 6vw, 48px);
+
+            font-weight: 900;
+
+            line-height: 1.3;
+
+            margin-bottom: 16px;
+
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+        }
+
+
+
+        .hero p {
+
+            font-size: clamp(14px, 3vw, 18px);
+
+            opacity: 0.9;
+
+            max-width: 600px;
+
+            margin: 0 auto 32px;
+
+        }
+
+
+
+        .hero-icons {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 16px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+
+        .hero-icon-badge {
+
+            background: rgba(255, 255, 255, 0.15);
+
+            border-radius: 12px;
+
+            padding: 10px 18px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+        }
+
+
+
+        /* �i�r�Q�[�V���� */
+
+        .toc {
+
+            background: white;
+
+            border-bottom: 2px solid var(--border);
+
+            padding: 0;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+
+            overflow-x: auto;
+
+        }
+
+
+
+        .toc-inner {
+
+            display: flex;
+
+            gap: 0;
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        .toc a {
+
+            color: var(--text-sub);
+
+            text-decoration: none;
+
+            padding: 14px 18px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            white-space: nowrap;
+
+            border-bottom: 3px solid transparent;
+
+            transition: all 0.2s;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+        }
+
+
+
+        .toc a:hover {
+
+            color: var(--google-purple);
+
+            border-bottom-color: var(--google-purple);
+
+            background: #EDE7F6;
+
+        }
+
+
+
+        /* �R���`E�`E*/
+
+        .container {
+
+            max-width: 860px;
+
+            margin: 0 auto;
+
+            padding: 40px 20px;
+
+        }
+
+
+
+        .intro-box {
+
+            background: linear-gradient(135deg, #E0F7FA, #EDE7F6);
+
+            border-left: 4px solid var(--google-green);
+
+            border-radius: 12px;
+
+            padding: 24px 28px;
+
+            margin-bottom: 48px;
+
+        }
+
+
+
+        .intro-box h2 {
+
+            color: var(--google-green);
+
+            font-size: 18px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        .intro-box ul {
+
+            list-style: none;
+
+            padding: 0;
+
+        }
+
+
+
+        .intro-box ul li {
+
+            padding: 4px 0;
+
+            padding-left: 28px;
+
+            position: relative;
+
+        }
+
+
+
+        .intro-box ul li::before {
+
+            content: 'E;
+
+            position: absolute;
+
+            left: 0;
+
+        }
+
+
+
+        /* �X�`E�`E*/
+
+        .step-section {
+
+            margin-bottom: 64px;
+
+            scroll-margin-top: 60px;
+
+        }
+
+
+
+        .step-header {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 16px;
+
+            margin-bottom: 24px;
+
+        }
+
+
+
+        .step-number {
+
+            background: linear-gradient(135deg, #5E35B1, #7C4DFF);
+
+            color: white;
+
+            width: 52px;
+
+            height: 52px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 22px;
+
+            font-weight: 900;
+
+            flex-shrink: 0;
+
+            box-shadow: 0 4px 12px rgba(94, 53, 177, 0.35);
+
+        }
+
+
+
+        .step-title-group h2 {
+
+            font-size: 22px;
+
+            font-weight: 900;
+
+            color: var(--text-main);
+
+        }
+
+
+
+        .step-title-group p {
+
+            font-size: 14px;
+
+            color: var(--text-sub);
+
+            margin-top: 2px;
+
+        }
+
+
+
+        .step-body {
+
+            padding-left: 68px;
+
+        }
+
+
+
+        @media (max-width: 600px) {
+
+            .step-body {
+
+                padding-left: 0;
+
+            }
+
+        }
+
+
+
+        .instruction-text {
+
+            font-size: 15px;
+
+            margin-bottom: 20px;
+
+            background: white;
+
+            border-radius: 10px;
+
+            padding: 16px 20px;
+
+            border: 1px solid var(--border);
+
+        }
+
+
+
+        .instruction-text strong {
+
+            color: var(--google-purple);
+
+        }
+
+
+
+        .point-box {
+
+            background: #fff8e1;
+
+            border-left: 4px solid var(--google-yellow);
+
+            border-radius: 8px;
+
+            padding: 14px 18px;
+
+            margin: 16px 0;
+
+            font-size: 14px;
+
+        }
+
+
+
+        .point-box .label {
+
+            font-weight: 700;
+
+            color: #f57f17;
+
+            margin-bottom: 4px;
+
+        }
+
+
+
+        .warn-box {
+
+            background: #fce4ec;
+
+            border-left: 4px solid var(--google-red);
+
+            border-radius: 8px;
+
+            padding: 14px 18px;
+
+            margin: 16px 0;
+
+            font-size: 14px;
+
+        }
+
+
+
+        .warn-box .label {
+
+            font-weight: 700;
+
+            color: var(--google-red);
+
+            margin-bottom: 4px;
+
+        }
+
+
+
+        /* ===== UI���`E�A�`EE����E===== */
+
+        .mockup-wrap {
+
+            background: #e5e7eb;
+
+            border-radius: 16px;
+
+            padding: 12px;
+
+            margin: 20px 0;
+
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+
+        }
+
+
+
+        .browser-bar {
+
+            background: white;
+
+            border-radius: 8px 8px 0 0;
+
+            padding: 10px 14px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            border-bottom: 1px solid #dadce0;
+
+        }
+
+
+
+        .browser-dots {
+
+            display: flex;
+
+            gap: 5px;
+
+        }
+
+
+
+        .browser-dot {
+
+            width: 12px;
+
+            height: 12px;
+
+            border-radius: 50%;
+
+        }
+
+
+
+        .d-red {
+
+            background: #ff5f57;
+
+        }
+
+
+
+        .d-yellow {
+
+            background: #febc2e;
+
+        }
+
+
+
+        .d-green {
+
+            background: #28c840;
+
+        }
+
+
+
+        .address-bar {
+
+            flex: 1;
+
+            background: #f1f3f4;
+
+            border-radius: 20px;
+
+            padding: 5px 14px;
+
+            font-size: 12px;
+
+            color: #5f6368;
+
+            font-family: monospace;
+
+        }
+
+
+
+        .browser-content {
+
+            background: white;
+
+            border-radius: 0 0 8px 8px;
+
+            overflow: hidden;
+
+        }
+
+
+
+        /* Google Forms �g�b�vE�[�W ���`E */
+
+        .gf-topbar {
+
+            background: white;
+
+            border-bottom: 1px solid #e0e0e0;
+
+            padding: 12px 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 16px;
+
+        }
+
+
+
+        .gf-logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            font-size: 18px;
+
+            font-weight: 500;
+
+            color: #5f6368;
+
+        }
+
+
+
+        .gf-logo .logo-icon {
+
+            width: 32px;
+
+            height: 32px;
+
+            background: linear-gradient(135deg, #7e57c2, #7C4DFF);
+
+            border-radius: 4px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+
+        .gf-logo .logo-icon svg {
+
+            width: 20px;
+
+            height: 20px;
+
+            fill: white;
+
+        }
+
+
+
+        .gf-body {
+
+            padding: 32px 24px;
+
+            background: #f8f9fc;
+
+            min-height: 280px;
+
+        }
+
+
+
+        .gf-subtitle {
+
+            font-size: 13px;
+
+            color: #5f6368;
+
+            margin-bottom: 20px;
+
+            font-weight: 500;
+
+            letter-spacing: 0.02em;
+
+        }
+
+
+
+        .gf-new-card {
+
+            display: inline-flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            width: 120px;
+
+            cursor: pointer;
+
+        }
+
+
+
+        .gf-new-thumb {
+
+            width: 120px;
+
+            height: 90px;
+
+            border-radius: 8px;
+
+            border: 2px dashed #9e9e9e;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: white;
+
+            transition: all 0.2s;
+
+            gap: 6px;
+
+        }
+
+
+
+        .gf-new-thumb:hover {
+
+            border-color: #5E35B1;
+
+            background: #EDE7F6;
+
+        }
+
+
+
+        .gf-new-plus {
+
+            width: 36px;
+
+            height: 36px;
+
+            background: var(--google-purple);
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: white;
+
+            font-size: 24px;
+
+            line-height: 1;
+
+        }
+
+
+
+        .gf-new-label {
+
+            font-size: 12px;
+
+            color: #5f6368;
+
+            margin-top: 8px;
+
+            text-align: center;
+
+        }
+
+
+
+        .gf-recent {
+
+            margin-top: 32px;
+
+        }
+
+
+
+        .gf-recent-title {
+
+            font-size: 13px;
+
+            color: #5f6368;
+
+            margin-bottom: 12px;
+
+            font-weight: 500;
+
+        }
+
+
+
+        /* �t�H�[���Ҋ�E�`E */
+
+        .gf-editor-bar {
+
+            background: white;
+
+            border-bottom: 1px solid #e0e0e0;
+
+            padding: 10px 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+
+
+        .gf-editor-title {
+
+            font-size: 16px;
+
+            color: #5f6368;
+
+            flex: 1;
+
+        }
+
+
+
+        .gf-tab-row {
+
+            display: flex;
+
+            border-bottom: 1px solid #e0e0e0;
+
+            background: white;
+
+            padding: 0 20px;
+
+        }
+
+
+
+        .gf-tab {
+
+            padding: 12px 18px;
+
+            font-size: 13px;
+
+            color: #5f6368;
+
+            border-bottom: 3px solid transparent;
+
+            cursor: pointer;
+
+            font-weight: 500;
+
+        }
+
+
+
+        .gf-tab.active {
+
+            color: #5E35B1;
+
+            border-bottom-color: #5E35B1;
+
+        }
+
+
+
+        .gf-editor-body {
+
+            padding: 24px 16px;
+
+            background: #f8f9fc;
+
+            min-height: 300px;
+
+        }
+
+
+
+        .form-card {
+
+            background: white;
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+
+            max-width: 580px;
+
+            margin: 0 auto 16px;
+
+        }
+
+
+
+        .form-card-header {
+
+            background: #5E35B1;
+
+            height: 10px;
+
+        }
+
+
+
+        .form-card-body {
+
+            padding: 24px 28px;
+
+        }
+
+
+
+        .form-title-input {
+
+            width: 100%;
+
+            font-size: 22px;
+
+            font-weight: 700;
+
+            color: #202124;
+
+            border: none;
+
+            border-bottom: 2px solid #5E35B1;
+
+            outline: none;
+
+            padding: 4px 0;
+
+            font-family: var(--font);
+
+            margin-bottom: 8px;
+
+        }
+
+
+
+        .form-desc-input {
+
+            width: 100%;
+
+            font-size: 13px;
+
+            color: #5f6368;
+
+            border: none;
+
+            border-bottom: 1px solid #dadce0;
+
+            outline: none;
+
+            padding: 4px 0;
+
+            font-family: var(--font);
+
+        }
+
+
+
+        .question-card {
+
+            background: white;
+
+            border-radius: 8px;
+
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+
+            padding: 20px 24px;
+
+            max-width: 580px;
+
+            margin: 0 auto 12px;
+
+            border-left: 4px solid transparent;
+
+            position: relative;
+
+        }
+
+
+
+        .question-card.active {
+
+            border-left-color: #5E35B1;
+
+        }
+
+
+
+        .question-top {
+
+            display: flex;
+
+            gap: 12px;
+
+            align-items: flex-start;
+
+        }
+
+
+
+        .q-title-input {
+
+            flex: 1;
+
+            font-size: 15px;
+
+            color: #202124;
+
+            border: none;
+
+            border-bottom: 1px solid #5E35B1;
+
+            outline: none;
+
+            padding: 4px 0;
+
+            font-family: var(--font);
+
+            background: transparent;
+
+        }
+
+
+
+        .q-type-select {
+
+            font-size: 13px;
+
+            padding: 6px 12px;
+
+            border: 1px solid #dadce0;
+
+            border-radius: 4px;
+
+            color: #5f6368;
+
+            background: white;
+
+            min-width: 110px;
+
+        }
+
+
+
+        .q-options {
+
+            margin-top: 16px;
+
+        }
+
+
+
+        .q-option {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 6px 0;
+
+            font-size: 14px;
+
+            color: #5f6368;
+
+            border-bottom: 1px solid #f1f3f4;
+
+        }
+
+
+
+        .q-radio {
+
+            width: 16px;
+
+            height: 16px;
+
+            border: 2px solid #9e9e9e;
+
+            border-radius: 50%;
+
+            flex-shrink: 0;
+
+        }
+
+
+
+        .q-radio.checked {
+
+            border-color: #5E35B1;
+
+            background: radial-gradient(circle at center, #5E35B1 40%, transparent 40%);
+
+        }
+
+
+
+        .q-checkbox {
+
+            width: 16px;
+
+            height: 16px;
+
+            border: 2px solid #9e9e9e;
+
+            border-radius: 2px;
+
+            flex-shrink: 0;
+
+        }
+
+
+
+        .q-text-answer {
+
+            border: none;
+
+            border-bottom: 1px solid #9e9e9e;
+
+            width: 100%;
+
+            font-size: 14px;
+
+            color: #9e9e9e;
+
+            margin-top: 12px;
+
+            padding: 4px 0;
+
+            background: transparent;
+
+            font-family: var(--font);
+
+        }
+
+
+
+        .question-toolbar {
+
+            display: flex;
+
+            justify-content: flex-end;
+
+            gap: 4px;
+
+            margin-top: 12px;
+
+            padding-top: 12px;
+
+            border-top: 1px solid #f1f3f4;
+
+        }
+
+
+
+        .q-tool-btn {
+
+            padding: 4px 8px;
+
+            font-size: 12px;
+
+            color: #5f6368;
+
+            background: none;
+
+            border: none;
+
+            cursor: pointer;
+
+            border-radius: 4px;
+
+        }
+
+
+
+        .q-tool-btn:hover {
+
+            background: #f1f3f4;
+
+        }
+
+
+
+        .required-toggle {
+
+            font-size: 12px;
+
+            color: #5f6368;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+        }
+
+
+
+        .toggle-sw {
+
+            width: 32px;
+
+            height: 18px;
+
+            background: #5E35B1;
+
+            border-radius: 9px;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 2px;
+
+        }
+
+
+
+        .toggle-sw .knob {
+
+            width: 14px;
+
+            height: 14px;
+
+            background: white;
+
+            border-radius: 50%;
+
+            margin-left: auto;
+
+        }
+
+
+
+        /* ���M�ݒ胂�`E */
+
+        .gf-send-modal {
+
+            background: white;
+
+            border-radius: 8px;
+
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+            max-width: 540px;
+
+            margin: 20px auto;
+
+        }
+
+
+
+        .gf-send-header {
+
+            padding: 16px 24px;
+
+            border-bottom: 1px solid #e0e0e0;
+
+            font-size: 16px;
+
+            font-weight: 500;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+
+        .gf-send-body {
+
+            padding: 20px 24px;
+
+        }
+
+
+
+        .gf-send-tabs {
+
+            display: flex;
+
+            gap: 0;
+
+            border-bottom: 1px solid #e0e0e0;
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .gf-send-tab {
+
+            padding: 10px 16px;
+
+            font-size: 13px;
+
+            color: #5f6368;
+
+            border-bottom: 2px solid transparent;
+
+            cursor: pointer;
+
+        }
+
+
+
+        .gf-send-tab.active {
+
+            color: #5E35B1;
+
+            border-bottom-color: #5E35B1;
+
+        }
+
+
+
+        .gf-link-box {
+
+            background: #f1f3f4;
+
+            border-radius: 4px;
+
+            padding: 10px 14px;
+
+            font-size: 12px;
+
+            color: #1a73e8;
+
+            word-break: break-all;
+
+            font-family: monospace;
+
+            margin-bottom: 16px;
+
+        }
+
+
+
+        .gf-link-row {
+
+            display: flex;
+
+            gap: 8px;
+
+            align-items: center;
+
+        }
+
+
+
+        .gf-btn {
+
+            padding: 8px 20px;
+
+            border-radius: 4px;
+
+            border: none;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+            font-family: var(--font);
+
+            font-weight: 500;
+
+        }
+
+
+
+        .gf-btn-primary {
+
+            background: #5E35B1;
+
+            color: white;
+
+        }
+
+
+
+        .gf-btn-outline {
+
+            background: white;
+
+            color: #5E35B1;
+
+            border: 1px solid #5E35B1;
+
+        }
+
+
+
+        .gf-shorten-row {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            font-size: 13px;
+
+            color: #5f6368;
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        .gf-cb {
+
+            width: 16px;
+
+            height: 16px;
+
+            accent-color: #5E35B1;
+
+        }
+
+
+
+        /* �񓚊m�F���`E */
+
+        .response-topbar {
+
+            display: flex;
+
+            gap: 16px;
+
+            padding: 12px 24px;
+
+            border-bottom: 1px solid #e0e0e0;
+
+            background: white;
+
+        }
+
+
+
+        .response-tab {
+
+            padding: 8px 0;
+
+            font-size: 14px;
+
+            border-bottom: 2px solid transparent;
+
+            color: #5f6368;
+
+            font-weight: 500;
+
+            cursor: pointer;
+
+        }
+
+
+
+        .response-tab.active {
+
+            color: #5E35B1;
+
+            border-bottom-color: #5E35B1;
+
+        }
+
+
+
+        .response-body {
+
+            padding: 24px;
+
+            background: #f8f9fc;
+
+        }
+
+
+
+        .response-summary {
+
+            background: white;
+
+            border-radius: 8px;
+
+            padding: 20px 24px;
+
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+
+            max-width: 580px;
+
+            margin: 0 auto 16px;
+
+        }
+
+
+
+        .response-count {
+
+            font-size: 28px;
+
+            font-weight: 700;
+
+            color: var(--google-purple);
+
+        }
+
+
+
+        .response-count-label {
+
+            font-size: 13px;
+
+            color: var(--text-sub);
+
+        }
+
+
+
+        .pie-chart {
+
+            width: 120px;
+
+            height: 120px;
+
+            border-radius: 50%;
+
+            background: conic-gradient(#5E35B1 0% 58%, #7C4DFF 58% 80%, #e91e63 80% 92%, #ff9800 92% 100%);
+
+            margin: 0 auto 12px;
+
+        }
+
+
+
+        .chart-legend {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            justify-content: center;
+
+            font-size: 12px;
+
+        }
+
+
+
+        .legend-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 4px;
+
+        }
+
+
+
+        .legend-dot {
+
+            width: 10px;
+
+            height: 10px;
+
+            border-radius: 50%;
+
+        }
+
+
+
+        .spreadsheet-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            background: white;
+
+            border: 1px solid #dadce0;
+
+            border-radius: 4px;
+
+            padding: 8px 16px;
+
+            font-size: 13px;
+
+            color: #1a73e8;
+
+            text-decoration: none;
+
+            font-family: var(--font);
+
+            cursor: pointer;
+
+        }
+
+
+
+        /* �A�m�e�[�V���� */
+
+        .annotation {
+
+            position: relative;
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 12px;
+
+            margin: 20px 0;
+
+        }
+
+
+
+        .annotation-line {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            flex-shrink: 0;
+
+        }
+
+
+
+        .annotation-circle {
+
+            width: 28px;
+
+            height: 28px;
+
+            background: #ff5722;
+
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            flex-shrink: 0;
+
+        }
+
+
+
+        .annotation-text {
+
+            font-size: 14px;
+
+            padding-top: 4px;
+
+        }
+
+
+
+        .annotation-text strong {
+
+            color: #ff5722;
+
+        }
+
+
+
+        /* �n�C���C�g�I�[�oE���C */
+
+        .highlight-ring {
+
+            display: inline-block;
+
+            border: 3px solid #ff5722;
+
+            border-radius: 6px;
+
+            padding: 2px;
+
+            animation: pulse-ring 2s ease-in-out infinite;
+
+        }
+
+
+
+        @keyframes pulse-ring {
+
+
+
+            0%,
+
+            100% {
+
+                box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.4);
+
+            }
+
+
+
+            50% {
+
+                box-shadow: 0 0 0 6px rgba(255, 87, 34, 0);
+
+            }
+
+        }
+
+
+
+        /* �X�`E�v��E */
+
+        .divider {
+
+            border: none;
+
+            border-top: 2px dashed #dadce0;
+
+            margin: 48px 0;
+
+        }
+
+
+
+        /* ��E�iE */
+
+        .finish-banner {
+
+            text-align: center;
+
+            background: linear-gradient(135deg, #1b5e20, #2e7d32);
+
+            color: white;
+
+            border-radius: 16px;
+
+            padding: 48px 24px;
+
+            margin-top: 32px;
+
+        }
+
+
+
+        .finish-banner h2 {
+
+            font-size: 26px;
+
+            font-weight: 900;
+
+            margin-bottom: 12px;
+
+        }
+
+
+
+        .finish-banner p {
+
+            opacity: 0.9;
+
+            max-width: 480px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        footer {
+
+            text-align: center;
+
+            padding: 32px;
+
+            color: #9e9e9e;
+
+            font-size: 12px;
+
+        }
+
+
+        /* ====== Windows風ブラウザモックアップ ====== */
+        .browser-bar {
+            background: #f0f0f0;
+            border-bottom: 1px solid #d0d0d0;
+            padding: 6px 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .browser-dots {
+            display: flex;
+            gap: 0;
+            order: 2;
+            margin-left: auto;
+        }
+
+        .browser-dot {
+            width: 28px;
+            height: 22px;
+            border-radius: 0;
+            border: none;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0;
+            position: relative;
+            transition: background 0.15s;
+        }
+
+        .browser-dot:hover {
+            background: #e0e0e0;
+        }
+
+        /* ─ 最小化ボタン */
+        .browser-dot.d-red {
+            background: transparent;
+        }
+        .browser-dot.d-red::after {
+            content: '';
+            width: 10px;
+            height: 1px;
+            background: #5f6368;
+            display: block;
+        }
+
+        /* □ 最大化ボタン */
+        .browser-dot.d-yellow {
+            background: transparent;
+        }
+        .browser-dot.d-yellow::after {
+            content: '';
+            width: 9px;
+            height: 9px;
+            border: 1.5px solid #5f6368;
+            background: transparent;
+            display: block;
+            border-radius: 1px;
+        }
+
+        /* ✕ 閉じるボタン */
+        .browser-dot.d-green {
+            background: transparent;
+            border-radius: 0 6px 0 0;
+        }
+        .browser-dot.d-green:hover {
+            background: #e81123;
+        }
+        .browser-dot.d-green::before,
+        .browser-dot.d-green::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 1.5px;
+            background: #5f6368;
+        }
+        .browser-dot.d-green:hover::before,
+        .browser-dot.d-green:hover::after {
+            background: white;
+        }
+        .browser-dot.d-green::before {
+            transform: rotate(45deg);
+        }
+        .browser-dot.d-green::after {
+            transform: rotate(-45deg);
+        }
+
+        .address-bar {
+            order: 1;
+            flex: 1;
+            background: white;
+            border: 1px solid #d0d0d0;
+            border-radius: 16px;
+            padding: 4px 12px;
+            font-size: 12px;
+            color: #5f6368;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .mockup-wrap {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+            margin-bottom: 16px;
+        }
+
+        .browser-content {
+            background: white;
+        }
+
+
+        /* =============================================
+           レスポンシブ対応 (スマホ・タブレット)
+           ============================================= */
+
+        /* --- タブレット (768px以下) --- */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 16px 56px;
+            }
+            .hero h1 {
+                font-size: 26px;
+            }
+            .hero-chips {
+                gap: 6px;
+            }
+            .chip {
+                font-size: 11px;
+                padding: 4px 12px;
+            }
+            main {
+                padding: 32px 16px !important;
+            }
+            .toc a {
+                padding: 12px 12px;
+                font-size: 12px;
+                gap: 4px;
+            }
+            .step-number {
+                width: 44px;
+                height: 44px;
+                font-size: 18px;
+            }
+            .step-title-group h2 {
+                font-size: 18px;
+            }
+            .mockup-wrap {
+                margin: 16px -4px;
+            }
+            .divider {
+                margin: 32px 0;
+            }
+            .finish-banner {
+                padding: 36px 20px;
+            }
+            .finish-banner h2 {
+                font-size: 22px;
+            }
+            .point-box, .warn-box {
+                font-size: 13px;
+                padding: 12px 14px;
+            }
+            table {
+                font-size: 12px;
+            }
+            td, th {
+                padding: 6px 8px !important;
+            }
+        }
+
+        /* --- スマホ (480px以下) --- */
+        @media (max-width: 480px) {
+            .hero {
+                padding: 32px 16px 48px;
+            }
+            .hero h1 {
+                font-size: 22px;
+                line-height: 1.4;
+            }
+            .hero h1 span {
+                font-size: 16px;
+            }
+            .hero p {
+                font-size: 13px;
+                margin-bottom: 20px;
+            }
+            .hero-badge {
+                font-size: 11px;
+                padding: 4px 14px;
+                margin-bottom: 14px;
+            }
+            .hero-chips {
+                flex-wrap: wrap;
+                gap: 6px;
+                justify-content: center;
+            }
+            .chip {
+                font-size: 11px;
+                padding: 4px 10px;
+            }
+            .toc-inner {
+                gap: 0;
+                padding: 0 4px;
+            }
+            .toc a {
+                padding: 10px 10px;
+                font-size: 11px;
+                gap: 3px;
+                white-space: nowrap;
+            }
+            .step-section {
+                margin-bottom: 48px;
+            }
+            .step-header {
+                gap: 12px;
+                margin-bottom: 16px;
+            }
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+                flex-shrink: 0;
+            }
+            .step-title-group h2 {
+                font-size: 17px;
+                line-height: 1.3;
+            }
+            .step-title-group p {
+                font-size: 12px;
+            }
+            .step-body {
+                padding-left: 0;
+            }
+            .instruction-text {
+                font-size: 14px;
+                padding: 14px 16px;
+            }
+            .point-box, .warn-box {
+                font-size: 12px;
+                padding: 12px 14px;
+                margin: 12px 0;
+            }
+            .annotation {
+                gap: 10px;
+                margin: 14px 0;
+            }
+            .annotation-circle {
+                width: 24px;
+                height: 24px;
+                font-size: 11px;
+                flex-shrink: 0;
+            }
+            .annotation-text {
+                font-size: 13px;
+            }
+            .mockup-wrap {
+                margin: 12px -4px;
+                border-radius: 8px;
+            }
+            .browser-bar {
+                padding: 6px 8px;
+            }
+            .address-bar {
+                font-size: 10px;
+                padding: 3px 8px;
+            }
+            .browser-content {
+                overflow-x: auto;
+            }
+            table {
+                font-size: 11px;
+                min-width: 320px;
+            }
+            td, th {
+                padding: 5px 6px !important;
+            }
+            .divider {
+                margin: 28px 0;
+            }
+            .finish-banner {
+                padding: 32px 16px;
+                border-radius: 12px;
+                margin-top: 24px;
+            }
+            .finish-banner h2 {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            .finish-banner p {
+                font-size: 13px;
+                line-height: 1.7;
+            }
+            .gf-body {
+                padding: 20px 12px;
+            }
+            .gf-editor-body {
+                padding: 16px 10px;
+            }
+            .form-card, .question-card, .response-summary {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            .gf-send-modal {
+                margin: 12px;
+            }
+            .intro-box {
+                padding: 18px 16px;
+                margin-bottom: 32px;
+            }
+            .intro-box h2 {
+                font-size: 16px;
+            }
+            footer {
+                padding: 24px 16px;
+                font-size: 11px;
+            }
+        }
+
+        /* --- 極小スマホ (360px以下) --- */
+        @media (max-width: 360px) {
+            .hero h1 {
+                font-size: 19px;
+            }
+            .toc a {
+                padding: 10px 8px;
+                font-size: 10px;
+            }
+            .step-number {
+                width: 36px;
+                height: 36px;
+                font-size: 14px;
+            }
+            .step-title-group h2 {
+                font-size: 15px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<nav class="toc"><div class="toc-inner"><a href="index.html" style="color:#9e9e9e;">← ホーム</a><a href="#step-forms" style="color:#5E35B1;">&#128203; フォーム</a><a href="#step-docs">&#128221; ドキュメント</a><a href="#step-drive">&#128193; ドライブ</a><a href="#step-lineworks">&#128172; LINE WORKS</a><a href="#step-sheets">&#128202; シート</a><a href="#step-meet">&#128249; Meet</a><a href="#step-canva">&#127912; Canva</a><a href="#step-chouseisan">&#128197; 調整さん</a></div></nav>
+<header class="hero"><div class="hero-inner"><div class="hero-badge">PTA デジタル推進ガイド 2026</div><h1>PTAデジタルツール<br><span>かんたん活用ガイド</span></h1><p class="hero-sub">厳選されたツールの操作方法をパッと確認。<br><strong>すべてのツールが PTA なら無料で利用可能です。</strong></p><div class="hero-chips"><span class="chip">✅ スマホ対応</span><span class="chip">✅ 無料で使える</span><span class="chip">✅ 操作画面付き</span></div></div></header><main style="max-width:900px;margin:0 auto;padding:48px 20px;">
+<div style="font-size:18px;font-weight:900;color:#5E35B1;margin:0 0 24px;border-bottom:2px solid #D1C4E9;padding-bottom:8px;">🔷 Google の便利なツール（すべて無料）</div><!-- Googleフォーム 簡易版 -->
+<section class="step-section" id="step-forms">
+    <div class="step-header">
+        <div class="step-number"
+            style="background:linear-gradient(135deg,#5E35B1,#7C4DFF);box-shadow:0 4px 12px rgba(103,58,183,0.35);">📋
+        </div>
+        <div class="step-title-group">
+            <h2>Googleフォームでアンケートを作る</h2>
+            <div style="color:#5E35B1;font-size:12px;font-weight:700;margin-bottom:4px;">💰 PTAなら 0円（無料）</div>
+            <p>参加確認・アンケートを紙ゼロで自動集計</p>
+        </div>
+    </div>
+    <div class="step-body">
+        <div class="instruction-text">
+            Googleフォームは、アンケートや参加確認を<strong>「紙を配らずにスマホで回答してもらえる」</strong>ツールです。回答は自動で集計され、円グラフや一覧表で結果が見られます。
+        </div>
+        <div class="mockup-wrap">
+            <div class="browser-bar">
+                <div class="browser-dots">
+                    <div class="browser-dot d-red"></div>
+                    <div class="browser-dot d-yellow"></div>
+                    <div class="browser-dot d-green"></div>
+                </div>
+                <div class="address-bar">🔒 docs.google.com/forms/d/xxxxxxxxxx/edit</div>
+            </div>
+            <div class="browser-content">
+                <div style="background:#f3e5f5;padding:16px;">
+                    <div
+                        style="background:white;border-radius:8px;border-top:5px solid #5E35B1;padding:20px;margin-bottom:12px;">
+                        <div style="font-size:18px;font-weight:700;color:#202124;margin-bottom:6px;">⭐ 星空観察イベント 参加フォーム
+                        </div>
+                        <div style="font-size:13px;color:#5f6368;">以下のフォームにご記入ください</div>
+                    </div>
+                    <div
+                        style="background:white;border-radius:8px;padding:16px;margin-bottom:10px;border-left:4px solid #5E35B1;">
+                        <div style="font-size:14px;font-weight:700;color:#202124;margin-bottom:8px;">お名前 <span
+                                style="color:#d32f2f;font-size:12px;">*必須</span></div>
+                        <div style="border-bottom:1px solid #5E35B1;padding:6px 0;font-size:13px;color:#9e9e9e;">回答を入力
+                        </div>
+                    </div>
+                    <div style="background:white;border-radius:8px;padding:16px;margin-bottom:10px;">
+                        <div style="font-size:14px;font-weight:700;color:#202124;margin-bottom:8px;">参加できますか？ <span
+                                style="color:#d32f2f;font-size:12px;">*必須</span></div>
+                        <div style="display:flex;flex-direction:column;gap:6px;">
+                            <label style="font-size:13px;display:flex;align-items:center;gap:6px;"><span
+                                    style="width:16px;height:16px;border-radius:50%;border:2px solid #5E35B1;display:inline-block;"></span>
+                                参加します</label>
+                            <label style="font-size:13px;display:flex;align-items:center;gap:6px;"><span
+                                    style="width:16px;height:16px;border-radius:50%;border:2px solid #9e9e9e;display:inline-block;"></span>
+                                不参加です</label>
+                        </div>
+                    </div>
+                    <div style="text-align:right;">
+                        <button
+                            style="background:#5E35B1;color:white;border:none;border-radius:4px;padding:8px 24px;font-size:13px;font-weight:700;">送信</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="annotation">
+            <div class="annotation-circle" style="background:#5E35B1;">1</div>
+            <div class="annotation-text"><strong>forms.google.com</strong> にアクセスして「＋ 新規作成」→ タイトルと質問を入力 →
+                「送信」でリンクをコピーしてLINEで配布するだけ。</div>
+        </div>
+        <div class="annotation">
+            <div class="annotation-circle" style="background:#5E35B1;">2</div>
+            <div class="annotation-text"><strong>回答の確認・制限</strong>:
+                「回答」タブでグラフが見られます。また「公開」ボタンから<strong>「回答数上限」</strong>を設定して、先着順で自動締め切りも可能です。
+            </div>
+        </div>
+        <div class="point-box">
+            <div class="label">💡 作成の流れ（5分でできる！）</div>
+            <ol style="padding-left:20px;margin-top:6px;">
+                <li>forms.google.com → ＋ 新規作成</li>
+                <li>タイトル入力（例：星空観察イベント 参加フォーム）</li>
+                <li>質問を追加（お名前・参加可否・人数など）</li>
+                <li>右上「送信」→ リンクをコピー</li>
+                <li>LINEやメールでリンクを配布</li>
+            </ol>
+        </div>
+        <div style="margin-top:16px;text-align:center;">
+            <a href="forms.html"
+                style="display:inline-block;background:#5E35B1;color:white;text-decoration:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:700;">📖
+                詳細版ガイドを見る →</a>
+        </div>
+    </div>
+</section>
+<hr class="divider">
+<!-- Googleドキュメント・Googleドライブ -->
+<section class="step-section" id="step-docs">
+    <div class="step-header">
+        <div class="step-number"
+            style="background:linear-gradient(135deg,#1565c0,#1a73e8);box-shadow:0 4px 12px rgba(26,115,232,0.35);">📝
+        </div>
+        <div class="step-title-group">
+            <h2>Googleドキュメントの活用</h2>
+            <div style="color:#1565c0;font-size:12px;font-weight:700;margin-bottom:4px;">💰 PTAなら 0円（無料）</div>
+            <p>お手紙・議事録をオンラインで作成・共同編集</p>
+        </div>
+    </div>
+    <div class="step-body">
+        <div class="instruction-text">
+            Googleドキュメントは、Word感覚でオンライン上に文書を作れるツールです。<strong>「複数人で同時に編集・コメントできる」</strong>機能が便利で、お手紙の下書きを役員全員で確認・修正できるので、メールのやりとりが大幅に減ります。
+        </div>
+        <div class="mockup-wrap">
+            <div class="browser-bar">
+                <div class="browser-dots">
+                    <div class="browser-dot d-red"></div>
+                    <div class="browser-dot d-yellow"></div>
+                    <div class="browser-dot d-green"></div>
+                </div>
+                <div class="address-bar">🔒 docs.google.com/document/d/xxxxxxxxxx/edit</div>
+            </div>
+            <div class="browser-content">
+                <div
+                    style="background:white;border-bottom:1px solid #e0e0e0;padding:8px 16px;display:flex;align-items:center;gap:10px;">
+                    <div
+                        style="width:28px;height:28px;background:linear-gradient(135deg,#1565c0,#1a73e8);border-radius:4px;display:flex;align-items:center;justify-content:center;">
+                        <span style="color:white;font-size:14px;font-weight:700;">D</span>
+                    </div>
+                    <div>
+                        <div style="font-size:14px;color:#202124;font-weight:500;">星空観察イベントのご案内（下書き）</div>
+                        <div style="font-size:10px;color:#5f6368;">☁️ ドライブに保存済み</div>
+                    </div>
+                    <div style="margin-left:auto;">
+                        <div
+                            style="background:#e8f0fe;color:#1a73e8;border-radius:4px;padding:5px 12px;font-size:12px;font-weight:700;">
+                            🔗 共有</div>
+                    </div>
+                </div>
+                <div style="display:flex;background:#f0f0f0;min-height:260px;">
+                    <div
+                        style="max-width:520px;width:100%;padding:28px 36px;background:white;margin:20px auto;box-shadow:0 1px 4px rgba(0,0,0,0.1);position:relative;">
+                        <p style="text-align:right;font-size:13px;color:#5f6368;margin-bottom:12px;">2025年10月1日</p>
+                        <p style="text-align:center;font-size:16px;font-weight:700;margin-bottom:12px;">星空観察イベントのご案内</p>
+                        <p style="font-size:13px;margin-bottom:10px;">保護者の皆様</p>
+                        <p style="font-size:13px;line-height:1.9;margin-bottom:10px;">お子さんと夜空を楽しむ令和7年度 星空観察イベントを開催いたします。
+                        </p>
+                        <p
+                            style="font-size:13px;border:1px solid #e0e0e0;border-radius:4px;padding:10px 14px;background:#f8f9fc;">
+                            日時：11月8日（土）18:00〜21:00<br>場所：〇〇小学校 屋上・校庭<br>雨天：翌週土曜日に延期</p>
+                        <div class="highlight-ring"
+                            style="position:absolute;right:-140px;top:56px;width:136px;background:white;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.2);padding:10px;font-size:10px;">
+                            <div style="font-weight:700;color:#1a73e8;margin-bottom:4px;">💬 田中さん</div>
+                            <div style="color:#5f6368;">「雨天の連絡方法も追記したほうがいいかも」</div>
+                            <div style="margin-top:6px;display:flex;gap:4px;">
+                                <div
+                                    style="background:#e8f0fe;color:#1a73e8;font-size:9px;padding:2px 6px;border-radius:3px;">
+                                    返信</div>
+                                <div
+                                    style="background:#f1f3f4;color:#5f6368;font-size:9px;padding:2px 6px;border-radius:3px;">
+                                    解決</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="annotation">
+            <div class="annotation-circle" style="background:#1a73e8;">👆</div>
+            <div class="annotation-text">
+                文書内の気になる箇所を選択して<strong>「コメントを追加」（Ctrl+Alt+M）</strong>を押すと、付箋のようにコメントを残せます。役員全員が意見を書き込めます。</div>
+        </div>
+        <div class="point-box">
+            <div class="label">✏️ 提案モードで「こう直したい」を伝えられる</div>
+            画面右上の「編集」ボタンから<strong>「提案」モード</strong>に切り替えると、元の文章を変えずに修正案を出せます。<br>
+            <span
+                style="text-decoration:line-through;color:#d93025;background:#fce8e6;font-size:12px;">ふるってご参加ください。</span>
+            <span style="color:#0f9d58;background:#e6f4ea;font-size:12px;">お気軽にご参加ください。</span><br>
+            ↑ 元の文に取り消し線、新しい文が緑色で表示されます。オーナーが「承認」「拒否」を選べます。
+        </div>
+        <div class="point-box" style="background:#fff3e0;border-left:4px solid #ff9800;">
+            <div class="label" style="color:#e65100;">💡 円滑に進めるためのルール</div>
+            修正提案する場合は、原則として<strong>変更後の文章を提案</strong>しましょう！「ここが変」という指摘だけで終わらずに具体的な案を出すことで、議論がスムーズに進みます。
+        </div>
+        <div class="point-box">
+            <div class="label">💡 お手紙作成の流れ（おすすめ）</div>
+            <ol style="padding-left:20px;margin-top:6px;">
+                <li>担当者がドキュメントで下書きを作成</li>
+                <li>役員全員にリンクを共有（コメント権限）</li>
+                <li>コメントで意見を出し合う or 提案モードで修正案を提示</li>
+                <li>担当者が承認 → 確定したらPDF書き出し → 印刷・配布</li>
+            </ol>
+        </div>
+        <div class="point-box">
+            <div class="label">💡 PDFに書き出すには？</div>
+            「ファイル」→「ダウンロード」→「PDF形式（.pdf）」を選ぶだけ。
+        </div>
+    <div style="margin-top:16px;text-align:center;"><a href="docs.html" style="display:inline-block;background:#1565c0;color:white;text-decoration:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:700;">&#128214; 詳細版ガイドを見る →</a></div>
+</div>
+</section>
+
+<hr class="divider">
+
+<section class="step-section" id="step-drive">
+    <div class="step-header">
+        <div class="step-number"
+            style="background:linear-gradient(135deg,#137333,#0f9d58);box-shadow:0 4px 12px rgba(15,157,88,0.35);">📁
+        </div>
+        <div class="step-title-group">
+            <h2>Googleドライブの共有</h2>
+            <div style="color:#137333;font-size:12px;font-weight:700;margin-bottom:4px;">💰 PTAなら 0円（無料）</div>
+            <p>配布資料・写真・議事録をひとつの場所にまとめる</p>
+        </div>
+    </div>
+    <div class="step-body">
+        <div class="instruction-text">
+            Googleドライブは、クラウド上の「共有フォルダ」です。PTA関係の書類・写真・フォームの回答データをまとめてここに保存しておけば、役員全員がいつでも・どこからでもアクセスできます。<strong>USBメモリや紙での受け渡しが不要</strong>になります。
+        </div>
+        <div class="mockup-wrap">
+            <div class="browser-bar">
+                <div class="browser-dots">
+                    <div class="browser-dot d-red"></div>
+                    <div class="browser-dot d-yellow"></div>
+                    <div class="browser-dot d-green"></div>
+                </div>
+                <div class="address-bar">🔒 drive.google.com/drive/folders/xxxxxxxxxx</div>
+            </div>
+            <div class="browser-content">
+                <div style="display:flex;min-height:280px;">
+                    <div
+                        style="width:160px;background:#f8f9fc;border-right:1px solid #e0e0e0;padding:12px;font-size:12px;">
+                        <div style="font-weight:700;color:#5f6368;margin-bottom:12px;">🏠 マイドライブ</div>
+                        <div class="highlight-ring"
+                            style="background:#e8f5e9;border-radius:4px;padding:6px 10px;font-weight:700;color:#202124;margin-bottom:4px;">
+                            👥 共有ドライブ</div>
+                        <div style="color:#5f6368;padding:6px 10px;margin-bottom:4px;">🕐 最近使用</div>
+                    </div>
+                    <div style="flex:1;padding:16px;">
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                            <div style="font-size:14px;font-weight:700;">📁 2025年度 PTA共有フォルダ</div>
+                            <button
+                                style="background:#137333;color:white;border:none;border-radius:20px;padding:6px 14px;font-size:12px;cursor:pointer;">＋
+                                新規</button>
+                        </div>
+                        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;">
+                            <div
+                                style="border:1px solid #e0e0e0;border-radius:8px;padding:12px;text-align:center;background:white;">
+                                <div style="font-size:24px;margin-bottom:6px;">📁</div>
+                                <div style="font-size:11px;font-weight:500;">星空観察</div>
+                                <div style="font-size:10px;color:#9e9e9e;">8個</div>
+                            </div>
+                            <div
+                                style="border:1px solid #e0e0e0;border-radius:8px;padding:12px;text-align:center;background:white;">
+                                <div style="font-size:24px;margin-bottom:6px;">📁</div>
+                                <div style="font-size:11px;font-weight:500;">役員会 議事録</div>
+                                <div style="font-size:10px;color:#9e9e9e;">12個</div>
+                            </div>
+                            <div
+                                style="border:1px solid #e0e0e0;border-radius:8px;padding:12px;text-align:center;background:white;">
+                                <div style="font-size:24px;margin-bottom:6px;">📊</div>
+                                <div style="font-size:11px;font-weight:500;">回答_星空観察.xlsx</div>
+                                <div style="font-size:10px;color:#9e9e9e;">今日</div>
+                            </div>
+                            <div
+                                style="border:2px dashed #9e9e9e;border-radius:8px;padding:12px;text-align:center;background:#fafafa;cursor:pointer;">
+                                <div style="font-size:24px;color:#9e9e9e;margin-bottom:6px;">＋</div>
+                                <div style="font-size:11px;color:#9e9e9e;">アップロード</div>
+                            </div>
+                        </div>
+                        <div
+                            style="margin-top:12px;padding:10px 14px;background:#e8f5e9;border-radius:8px;display:flex;align-items:center;gap:10px;">
+                            <div style="display:flex;">
+                                <div
+                                    style="width:24px;height:24px;border-radius:50%;background:#1a73e8;color:white;font-size:10px;display:flex;align-items:center;justify-content:center;border:2px solid white;">
+                                    A</div>
+                                <div
+                                    style="width:24px;height:24px;border-radius:50%;background:#e91e63;color:white;font-size:10px;display:flex;align-items:center;justify-content:center;border:2px solid white;margin-left:-6px;">
+                                    B</div>
+                                <div
+                                    style="width:24px;height:24px;border-radius:50%;background:#ff9800;color:white;font-size:10px;display:flex;align-items:center;justify-content:center;border:2px solid white;margin-left:-6px;">
+                                    +5</div>
+                            </div>
+                            <span style="font-size:12px;color:#137333;font-weight:700;">役員8名が共有中</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="annotation">
+            <div class="annotation-circle" style="background:#0f9d58;">1</div>
+            <div class="annotation-text"><strong>フォルダをひとつ作る</strong>: 「2025年度 PTA共有フォルダ」のように年度ごとにフォルダを作り、役員全員に共有します。
+            </div>
+        </div>
+        <div class="annotation">
+            <div class="annotation-circle" style="background:#0f9d58;">2</div>
+            <div class="annotation-text"><strong>共有の方法</strong>: フォルダを右クリック→「共有」→相手のGmailアドレスを入力→権限を選んで送信します。</div>
+        </div>
+        <div class="point-box">
+            <div class="label">💡 「閲覧者」と「編集者」の違い</div>
+            <table style="width:100%;border-collapse:collapse;margin-top:8px;font-size:13px;">
+                <tr>
+                    <th style="text-align:left;padding:6px 8px;background:#f5f5f5;border:1px solid #e0e0e0;">権限</th>
+                    <th style="text-align:left;padding:6px 8px;background:#f5f5f5;border:1px solid #e0e0e0;">できること</th>
+                    <th style="text-align:left;padding:6px 8px;background:#f5f5f5;border:1px solid #e0e0e0;">対象</th>
+                </tr>
+                <tr>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">閲覧者</td>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">見るだけ</td>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">一般保護者</td>
+                </tr>
+                <tr>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">コメント者</td>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">閲覧＋コメント</td>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">レビュー役員</td>
+                </tr>
+                <tr>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">編集者</td>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">閲覧＋編集＋削除</td>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">担当役員</td>
+                </tr>
+            </table>
+        </div>
+        <div class="warn-box">
+            <div class="label">⚠️ 「リンクを知っている全員」設定に注意</div>
+            個人情報（名簿・回答データ）が入ったフォルダには「リンク公開」設定をしないでください。役員のGmailアドレスを直接指定する「特定のユーザー」共有が安全です。
+        </div>
+    <div style="margin-top:16px;text-align:center;"><a href="drive.html" style="display:inline-block;background:#137333;color:white;text-decoration:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:700;">&#128214; 詳細版ガイドを見る →</a></div>
+</div>
+</section>
+
+<hr class="divider">
+<hr class="divider">
+<section class="step-section" id="step-sheets">
+    <div class="step-header">
+        <div class="step-number"
+            style="background:linear-gradient(135deg,#1b5e20,#43a047);box-shadow:0 4px 12px rgba(67,160,71,0.35);">📊
+        </div>
+        <div class="step-title-group">
+            <h2>スプレッドシートの活用</h2>
+            <div style="color:#43a047;font-size:12px;font-weight:700;margin-bottom:4px;">💰 PTAなら 0円（無料）</div>
+            <p>名簿・会計・イベント進捗をクラウド管理</p>
+        </div>
+    </div>
+    <div class="step-body">
+        <div class="instruction-text">
+            GoogleスプレッドシートはExcelのオンライン版です。<strong>役員名簿・会計帳簿・イベント進捗表</strong>などをクラウド上で管理できます。Googleフォームの回答が自動でシートに集まるため、集計の手間がゼロになります。
+        </div>
+        <div class="mockup-wrap">
+            <div class="browser-bar">
+                <div class="browser-dots">
+                    <div class="browser-dot d-red"></div>
+                    <div class="browser-dot d-yellow"></div>
+                    <div class="browser-dot d-green"></div>
+                </div>
+                <div class="address-bar">🔒 docs.google.com/spreadsheets/d/xxxxxxxxxx/edit</div>
+            </div>
+            <div class="browser-content">
+                <div
+                    style="background:white;border-bottom:1px solid #e0e0e0;padding:8px 16px;display:flex;align-items:center;gap:10px;">
+                    <div
+                        style="width:28px;height:28px;background:#43a047;border-radius:4px;display:flex;align-items:center;justify-content:center;">
+                        <span style="color:white;font-size:14px;font-weight:700;">S</span>
+                    </div>
+                    <div>
+                        <div style="font-size:14px;font-weight:500;">2025年度PTA 管理シート</div>
+                        <div style="font-size:10px;color:#5f6368;">☁️ 保存済み</div>
+                    </div>
+                </div>
+                <div
+                    style="background:#f8f9fc;border-bottom:1px solid #e0e0e0;padding:0 16px;display:flex;overflow-x:auto;">
+                    <div
+                        style="padding:8px 16px;font-size:12px;background:white;border:1px solid #e0e0e0;border-bottom:none;border-radius:4px 4px 0 0;color:#43a047;font-weight:700;white-space:nowrap;">
+                        👥 役員名簿</div>
+                    <div style="padding:8px 16px;font-size:12px;color:#5f6368;white-space:nowrap;">💰 会計</div>
+                    <div style="padding:8px 16px;font-size:12px;color:#5f6368;white-space:nowrap;">⭐ イベント進捗</div>
+                    <div style="padding:8px 16px;font-size:12px;color:#5f6368;white-space:nowrap;">📊 フォーム回答</div>
+                </div>
+                <div style="overflow-x:auto;">
+                    <table style="width:100%;border-collapse:collapse;font-size:12px;">
+                        <thead>
+                            <tr>
+                                <th
+                                    style="padding:8px 12px;border:1px solid #c8e6c9;background:#43a047;color:white;text-align:left;">
+                                    お名前</th>
+                                <th
+                                    style="padding:8px 12px;border:1px solid #c8e6c9;background:#43a047;color:white;text-align:left;">
+                                    担当</th>
+                                <th
+                                    style="padding:8px 12px;border:1px solid #c8e6c9;background:#43a047;color:white;text-align:left;">
+                                    学年</th>
+                                <th
+                                    style="padding:8px 12px;border:1px solid #c8e6c9;background:#43a047;color:white;text-align:left;">
+                                    Gmail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background:#f1f8e9;">
+                                <td style="padding:6px 12px;border:1px solid #dcedc8;font-weight:700;">田中 花子</td>
+                                <td style="padding:6px 12px;border:1px solid #dcedc8;"><span
+                                        style="background:#e8f5e9;color:#2e7d32;border-radius:4px;padding:2px 8px;font-size:11px;">会長</span>
+                                </td>
+                                <td style="padding:6px 12px;border:1px solid #dcedc8;">3年</td>
+                                <td style="padding:6px 12px;border:1px solid #dcedc8;color:#1a73e8;">hanako@xxx.com</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:6px 12px;border:1px solid #dcedc8;font-weight:700;">山田 太郎</td>
+                                <td style="padding:6px 12px;border:1px solid #dcedc8;"><span
+                                        style="background:#e3f2fd;color:#1565c0;border-radius:4px;padding:2px 8px;font-size:11px;">副会長</span>
+                                </td>
+                                <td style="padding:6px 12px;border:1px solid #dcedc8;">5年</td>
+                                <td style="padding:6px 12px;border:1px solid #dcedc8;color:#1a73e8;">taro@xxx.com</td>
+                            </tr>
+                            <tr style="background:#f1f8e9;">
+                                <td style="padding:6px 12px;border:1px solid #dcedc8;font-weight:700;">鈴木 良子</td>
+                                <td style="padding:6px 12px;border:1px solid #dcedc8;"><span
+                                        style="background:#fff8e1;color:#f57f17;border-radius:4px;padding:2px 8px;font-size:11px;">会計</span>
+                                </td>
+                                <td style="padding:6px 12px;border:1px solid #dcedc8;">1年</td>
+                                <td style="padding:6px 12px;border:1px solid #dcedc8;color:#1a73e8;">yoshiko@xxx.com
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="annotation">
+            <div class="annotation-circle" style="background:#43a047;">💡</div>
+            <div class="annotation-text">
+                シートを複数タブに分けると管理が楽です。<strong>「役員名簿」「会計」「イベント進捗」「フォーム回答」</strong>の4シートで一本化がおすすめです。</div>
+        </div>
+        <div class="point-box">
+            <div class="label">💡 おすすめのシート構成</div>
+            <table style="width:100%;border-collapse:collapse;margin-top:8px;font-size:13px;">
+                <tr>
+                    <th style="text-align:left;padding:6px 8px;background:#f5f5f5;border:1px solid #e0e0e0;">シート名</th>
+                    <th style="text-align:left;padding:6px 8px;background:#f5f5f5;border:1px solid #e0e0e0;">管理する内容</th>
+                </tr>
+                <tr>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">👥 役員名簿</td>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">氏名・担当・学年・連絡先</td>
+                </tr>
+                <tr>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">💰 会計</td>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">収支・領収書番号・残高（SUM関数で自動計算）</td>
+                </tr>
+                <tr>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">⭐ イベント進捗</td>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">タスク・担当者・期限・完了チェック</td>
+                </tr>
+                <tr>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">📊 フォーム回答</td>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">Googleフォームから自動で流れ込む回答データ</td>
+                </tr>
+            </table>
+        </div>
+        <div class="point-box">
+            <div class="label">💡 Googleフォームと連携するには？</div>
+            フォームの「回答」タブ → 「📊 スプレッドシートで表示」を押すだけ。回答が届くたびに自動でシートに追記されます。
+        </div>
+    <div style="margin-top:16px;text-align:center;"><a href="sheets.html" style="display:inline-block;background:#43a047;color:white;text-decoration:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:700;">&#128214; 詳細版ガイドを見る →</a></div>
+</div>
+</section>
+
+<hr class="divider">
+
+<section class="step-section" id="step-meet">
+    <div class="step-header">
+        <div class="step-number"
+            style="background:linear-gradient(135deg,#0277bd,#039be5);box-shadow:0 4px 12px rgba(3,155,229,0.35);">📹
+        </div>
+        <div class="step-title-group">
+            <h2>Google Meet の活用</h2>
+            <div style="color:#039be5;font-size:12px;font-weight:700;margin-bottom:4px;">💰 PTAなら 0円（無料）</div>
+            <p>自宅から役員会に参加。Gmailで即使えるオンライン会議</p>
+        </div>
+    </div>
+    <div class="step-body">
+        <div class="instruction-text">
+            Google
+            Meetは、Googleが提供する無料のビデオ会議ツールです。<strong>Gmailアカウントがあれば今すぐ使えます</strong>。役員会をオンラインにするだけで、「お迎えがある」「仕事が終わらない」といった参加ハードルが一気に下がります。
+        </div>
+        <div class="mockup-wrap">
+            <div class="browser-bar">
+                <div class="browser-dots">
+                    <div class="browser-dot d-red"></div>
+                    <div class="browser-dot d-yellow"></div>
+                    <div class="browser-dot d-green"></div>
+                </div>
+                <div class="address-bar">🔒 meet.google.com/abc-defg-hij</div>
+            </div>
+            <div class="browser-content" style="background:#202124;">
+                <div style="min-height:280px;display:flex;flex-direction:column;">
+                    <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:8px;">
+                        <div
+                            style="background:#3c4043;border-radius:8px;padding:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:90px;">
+                            <div
+                                style="width:44px;height:44px;border-radius:50%;background:#1a73e8;display:flex;align-items:center;justify-content:center;color:white;font-size:18px;font-weight:700;">
+                                田</div>
+                            <div style="color:white;font-size:12px;">田中さん（会長）</div>
+                            <span
+                                style="background:rgba(255,255,255,0.1);border-radius:4px;padding:2px 8px;font-size:10px;color:rgba(255,255,255,0.7);">🎙️
+                                話し中</span>
+                        </div>
+                        <div
+                            style="background:#3c4043;border-radius:8px;padding:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:90px;">
+                            <div
+                                style="width:44px;height:44px;border-radius:50%;background:#e91e63;display:flex;align-items:center;justify-content:center;color:white;font-size:18px;font-weight:700;">
+                                山</div>
+                            <div style="color:white;font-size:12px;">山田さん</div>
+                            <span
+                                style="background:rgba(255,87,34,0.3);border-radius:4px;padding:2px 8px;font-size:10px;color:#ff7043;">🔇
+                                ミュート中</span>
+                        </div>
+                        <div
+                            style="background:#3c4043;border-radius:8px;padding:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:90px;">
+                            <div
+                                style="width:44px;height:44px;border-radius:50%;background:#ff9800;display:flex;align-items:center;justify-content:center;color:white;font-size:18px;font-weight:700;">
+                                鈴</div>
+                            <div style="color:white;font-size:12px;">鈴木さん</div>
+                            <span
+                                style="background:rgba(255,255,255,0.1);border-radius:4px;padding:2px 8px;font-size:10px;color:rgba(255,255,255,0.7);">🎙️</span>
+                        </div>
+                        <div
+                            style="background:#2a2b2e;border-radius:8px;padding:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:2px dashed #5f6368;min-height:90px;">
+                            <div style="color:#9e9e9e;font-size:20px;">👤</div>
+                            <div style="color:#9e9e9e;font-size:11px;">参加待ち…</div>
+                        </div>
+                    </div>
+                    <div style="background:#3c4043;padding:10px;display:flex;justify-content:center;gap:12px;">
+                        <button
+                            style="width:40px;height:40px;border-radius:50%;background:#ea4335;border:none;color:white;font-size:16px;cursor:pointer;">🎙️</button>
+                        <button
+                            style="width:40px;height:40px;border-radius:50%;background:#5f6368;border:none;color:white;font-size:16px;cursor:pointer;">📹</button>
+                        <button
+                            style="width:40px;height:40px;border-radius:50%;background:#5f6368;border:none;color:white;font-size:16px;cursor:pointer;">📋</button>
+                        <button
+                            style="width:40px;height:40px;border-radius:50%;background:#ea4335;border:none;color:white;font-size:14px;cursor:pointer;">終了</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="annotation">
+            <div class="annotation-circle" style="background:#039be5;">1</div>
+            <div class="annotation-text"><a href="https://meet.google.com" target="_blank"
+                    style="color:#1a73e8;"><strong>meet.google.com</strong></a> →「新しい会議を作成」をクリック。リンクをコピーしてLINE
+                WORKSやメールで送れば、相手はクリックだけで参加できます。</div>
+        </div>
+        <div class="annotation">
+            <div class="annotation-circle" style="background:#039be5;">2</div>
+            <div class="annotation-text"><strong>画面共有</strong>: 📋 ボタンから自分の画面を共有。スプレッドシートを見ながら会議を進行できます。</div>
+        </div>
+        <div class="annotation">
+            <div class="annotation-circle" style="background:#039be5;">3</div>
+            <div class="annotation-text"><strong>Googleカレンダー連携</strong>: カレンダーで予定を作るとMeetリンクが自動生成され、招待状と同時に送れます。</div>
+        </div>
+        <div class="point-box">
+            <div class="label">💡 よくある使い方パターン（PTA版）</div>
+            <table style="width:100%;border-collapse:collapse;margin-top:8px;font-size:13px;">
+                <tr>
+                    <th style="text-align:left;padding:6px 8px;background:#f5f5f5;border:1px solid #e0e0e0;">場面</th>
+                    <th style="text-align:left;padding:6px 8px;background:#f5f5f5;border:1px solid #e0e0e0;">活用方法</th>
+                </tr>
+                <tr>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">役員会（月1回）</td>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">全員オンラインで30分以内に完了</td>
+                </tr>
+                <tr>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">イベント打ち合わせ</td>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">スプレッドシートを画面共有しながら確認</td>
+                </tr>
+                <tr>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">急ぎの相談</td>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">LINE WORKSでリンクを送り、即席Meet開催</td>
+                </tr>
+                <tr>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">新役員への引き継ぎ</td>
+                    <td style="padding:6px 8px;border:1px solid #e0e0e0;">画面共有しながら操作説明を録画して保存</td>
+                </tr>
+            </table>
+        </div>
+        <div class="point-box">
+            <div class="label">💡 無料で使える時間は？</div>
+            Googleアカウントがあれば<strong>1対1は無制限</strong>、3人以上も<strong>60分まで無料</strong>（2026年2月現在）。PTAの役員会なら問題なし。
+        </div>
+    <div style="margin-top:16px;text-align:center;"><a href="meet.html" style="display:inline-block;background:#039be5;color:white;text-decoration:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:700;">&#128214; 詳細版ガイドを見る →</a></div>
+</div>
+</section>
+
+<hr class="divider">
+
+<!-- Canva クイックガイド -->
+<div style="font-size:18px;font-weight:900;color:#7d2ae8;margin:40px 0 24px;border-bottom:2px solid #f3e5f5;padding-bottom:8px;">🎨 制作・調整ツール（外部サービス）</div><section class="step-section" id="step-canva">
+    <div class="step-header">
+        <div class="step-number"
+            style="background:linear-gradient(135deg,#7d2ae8,#00c4cc);box-shadow:0 4px 12px rgba(125,42,232,0.35);">🎨
+        </div>
+        <div class="step-title-group">
+            <h2>Canvaでお便り・チラシを作る</h2>
+            <div style="color:#7d2ae8;font-size:12px;font-weight:700;margin-bottom:4px;">💰 PTAなら 0円（無料版）</div>
+            <p>テンプレートを選んで文字を変えるだけでプロ風のデザインに</p>
+        </div>
+    </div>
+    <div class="step-body">
+        <div class="instruction-text">
+            Canvaは、デザインの知識がなくても<strong>「テンプレートを選ぶだけ」</strong>でおしゃれなお便りが作れるツールです。
+        </div>
+        <div class="annotation">
+            <div class="annotation-circle" style="background:#7d2ae8;">1</div>
+            <div class="annotation-text"><strong>canva.com</strong> にログイン → 「デザインを作成」 → 「お便り」や「チラシ」を選択。</div>
+        </div>
+        <div class="annotation">
+            <div class="annotation-circle" style="background:#7d2ae8;">2</div>
+            <div class="annotation-text">左側の「テンプレート」から好きなデザインを選び、文字をクリックして打ち替えるだけ。</div>
+        </div>
+    <div style="margin-top:16px;text-align:center;"><a href="canva.html" style="display:inline-block;background:#7d2ae8;color:white;text-decoration:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:700;">&#128214; 詳細版ガイドを見る →</a></div>
+</div>
+</section>
+
+<hr class="divider">
+
+<!-- 調整さん クイックガイド -->
+<section class="step-section" id="step-chouseisan">
+    <div class="step-header">
+        <div class="step-number"
+            style="background:linear-gradient(135deg,#00897b,#4db6ac);box-shadow:0 4px 12px rgba(0,137,123,0.35);">📅
+        </div>
+        <div class="step-title-group">
+            <h2>調整さんで日程を決める</h2>
+            <div style="color:#00897b;font-size:12px;font-weight:700;margin-bottom:4px;">💰 登録不要・0円（無料）</div>
+            <p>候補日を送って全員の○△×をパッと集計</p>
+        </div>
+    </div>
+    <div class="step-body">
+        <div class="instruction-text">
+            「次の会議、いつにします？」というやり取りを、<strong>リンク一つ</strong>で解決します。
+        </div>
+        <div class="annotation">
+            <div class="annotation-circle" style="background:#00897b;">1</div>
+            <div class="annotation-text"><strong>chouseisan.com</strong> でイベントを作成 → 発行されたURLをLINEに貼って共有。</div>
+        </div>
+        <div class="annotation">
+            <div class="annotation-circle" style="background:#00897b;">2</div>
+            <div class="annotation-text">回答が集まると一目で「○が多い日」がわかります。相手は会員登録も不要です。</div>
+        </div>
+    <div style="margin-top:16px;text-align:center;"><a href="chouseisan.html" style="display:inline-block;background:#00897b;color:white;text-decoration:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:700;">&#128214; 詳細版ガイドを見る →</a></div>
+</div>
+</section>
+
+
+<div style="font-size:18px;font-weight:900;color:#00a800;margin:40px 0 24px;border-bottom:2px solid #e8f5e9;padding-bottom:8px;">💬 役員間の連絡ツール（別サービス）</div><!-- LINE WORKS・スプレッドシート・Meet・完了バナー・フッター -->
+<section class="step-section" id="step-lineworks">
+    <div class="step-header">
+        <div class="step-number"
+            style="background:linear-gradient(135deg,#00c300,#00a800);box-shadow:0 4px 12px rgba(0,163,0,0.35);">💬
+        </div>
+        <div class="step-title-group">
+            <h2>LINE WORKS の活用</h2>
+            <div style="color:#00a800;font-size:12px;font-weight:700;margin-bottom:4px;">💰 PTAなら 0円（ずっと無料）</div>
+            <p>PTAにぴったり！無料で使えるビジネスLINE（※別サービス）</p>
+        </div>
+    </div>
+    <div class="step-body">
+        <div class="instruction-text">
+            LINE
+            WORKSは、普段使いのLINEに似た操作感で使えるビジネス向けチャットツールです。<strong>非営利団体（PTAを含む）は無料で利用できる「フリープラン」</strong>が用意されており、役員間の連絡・グループトーク・ファイル共有をプライベートのLINEアカウントと混ぜずにすっきり管理できます。
+        </div>
+        <div class="mockup-wrap">
+            <div class="browser-bar">
+                <div class="browser-dots">
+                    <div class="browser-dot d-red"></div>
+                    <div class="browser-dot d-yellow"></div>
+                    <div class="browser-dot d-green"></div>
+                </div>
+                <div class="address-bar">🔒 lineworks.naver.jp — LINE WORKS</div>
+            </div>
+            <div class="browser-content">
+                <div style="display:flex;min-height:300px;">
+                    <div
+                        style="width:56px;background:#00c300;display:flex;flex-direction:column;align-items:center;padding:12px 0;gap:16px;">
+                        <div
+                            style="width:36px;height:36px;background:white;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;color:#00c300;font-size:14px;">
+                            LW</div>
+                        <div style="color:rgba(255,255,255,0.7);font-size:20px;">💬</div>
+                        <div style="color:rgba(255,255,255,0.7);font-size:20px;">📅</div>
+                        <div style="color:rgba(255,255,255,0.7);font-size:20px;">📁</div>
+                    </div>
+                    <div style="width:200px;background:#f7f7f7;border-right:1px solid #e0e0e0;">
+                        <div style="padding:12px 14px;font-size:13px;font-weight:700;border-bottom:1px solid #e0e0e0;">
+                            トーク</div>
+                        <div
+                            style="padding:10px 14px;display:flex;gap:8px;align-items:center;background:white;border-left:3px solid #00c300;">
+                            <div
+                                style="width:36px;height:36px;background:#00c300;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:12px;font-weight:700;flex-shrink:0;">
+                                PTA</div>
+                            <div>
+                                <div style="font-size:13px;font-weight:700;">📌 2025年度 役員会</div>
+                                <div style="font-size:11px;color:#9e9e9e;">田中さん：了解しました！</div>
+                            </div>
+                        </div>
+                        <div style="padding:10px 14px;display:flex;gap:8px;align-items:center;">
+                            <div
+                                style="width:36px;height:36px;background:#e3f2fd;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#1a73e8;font-size:16px;flex-shrink:0;">
+                                ⭐</div>
+                            <div>
+                                <div style="font-size:13px;font-weight:700;">星空観察 実行班</div>
+                                <div style="font-size:11px;color:#9e9e9e;">山田さん：望遠鏡の数は...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="flex:1;display:flex;flex-direction:column;background:white;">
+                        <div style="padding:10px 16px;border-bottom:1px solid #e0e0e0;font-size:13px;font-weight:700;">
+                            📌 2025年度 役員会 <span style="font-size:11px;color:#9e9e9e;font-weight:400;">8名</span></div>
+                        <div style="flex:1;padding:12px 16px;display:flex;flex-direction:column;gap:10px;">
+                            <div style="display:flex;gap:8px;">
+                                <div
+                                    style="width:28px;height:28px;background:#f06292;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:11px;font-weight:700;flex-shrink:0;">
+                                    田</div>
+                                <div>
+                                    <div style="font-size:10px;color:#9e9e9e;margin-bottom:3px;">田中さん 10:32</div>
+                                    <div
+                                        style="background:#f1f3f4;border-radius:0 12px 12px 12px;padding:8px 12px;font-size:13px;max-width:200px;">
+                                        星空観察の参加フォーム、確認できましたか？</div>
+                                </div>
+                            </div>
+                            <div style="display:flex;justify-content:flex-end;">
+                                <div
+                                    style="background:#dcf8c6;border-radius:12px 0 12px 12px;padding:8px 12px;font-size:13px;max-width:200px;">
+                                    了解です。当日の段取りをMeetで確認しましょう！</div>
+                            </div>
+                        </div>
+                        <div style="padding:8px 12px;border-top:1px solid #e0e0e0;display:flex;gap:8px;">
+                            <input
+                                style="flex:1;border:1px solid #e0e0e0;border-radius:20px;padding:8px 14px;font-size:13px;outline:none;"
+                                placeholder="メッセージを入力..." readonly>
+                            <button
+                                style="background:#00c300;color:white;border:none;border-radius:50%;width:32px;height:32px;">▶</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="annotation">
+            <div class="annotation-circle" style="background:#00c300;">1</div>
+            <div class="annotation-text"><strong>グループトーク</strong>: 役員全体・係ごとなど複数のグループを作成可能。普段のLINEとは完全に分離できます。</div>
+        </div>
+        <div class="annotation">
+            <div class="annotation-circle" style="background:#00c300;">2</div>
+            <div class="annotation-text"><strong>既読表示・アナウンス</strong>: 既読人数が確認でき、重要なお知らせを固定表示できます。</div>
+        </div>
+        <div class="point-box">
+            <div class="label">💡 特別プランの始め方</div>
+            <ol style="padding-left:20px;margin-top:6px;">
+                <li><a href="https://line.worksmobile.com/jp/" target="_blank"
+                        style="color:#1a73e8;">line.worksmobile.com</a> →「無料で始める」をクリック</li>
+                <li>会長やICT担当者（管理者）のGmailでアカウント作成</li>
+                <li>「管理者画面」から役員のメールアドレスを招待</li>
+                <li>招待された役員はスマホアプリをインストールしてログイン</li>
+            </ol>
+        </div>
+        <div class="warn-box" style="background:#fff3e0;border-left:4px solid #ff9800;">
+            <div class="label" style="color:#e65100;">💡 個人LINEとは「別アプリ」のメリット</div>
+            個人LINEのIDを教え合う必要がないため<strong>プライバシーが守られ</strong>、どれだけグループが増えても<strong>いつものLINEがごちゃごちゃになりません</strong>。
+        </div>
+        <div class="point-box" style="background:#e8f5e9;border-left:4px solid #00c300;">
+            <div class="label" style="color:#00a800;">ℹ️ 特別プランの仕様と免責</div>
+            ストレージ <strong>50GB</strong> / 最大 <strong>1,000人</strong> まで無料です。
+            <div style="font-size:11px;color:#666;margin-top:4px;">
+                ※動画の多用にはご注意ください。ルール変更の可能性があるため、最新情報は必ず <a href="https://line.worksmobile.com/jp/" target="_blank"
+                    style="color:#00a800;">公式HP</a> をご確認ください。
+            </div>
+        </div>
+    <div style="margin-top:16px;text-align:center;"><a href="lineworks.html" style="display:inline-block;background:#00a800;color:white;text-decoration:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:700;">&#128214; 詳細版ガイドを見る →</a></div>
+</div>
+</section>
+
+<hr class="divider">
+
+<div class="finish-banner">
+    <div style="font-size:56px;margin-bottom:16px;">🎉</div>
+    <h2>お疲れさまでした！</h2>
+    <p>フォーム・ドキュメント・ドライブ・LINE
+        WORKS・スプレッドシート・Meet・Canva・調整さんの<br>8つを使いこなせば、PTAのデジタル化はほぼ完成です。<br>最初の1回だけやってみれば、あとはどんどん楽になります。<br>ご不明な点はPTA役員担当者にお声がけください。
+    </p>
+</div>
+
+</main>
+
+<footer>
+    <p>PTAデジタルツール かんたん活用ガイド | PTA デジタル推進委員会</p>
+    <p style="margin-top:6px;">※ Google の画面はバージョンによって異なる場合があります</p>
+</footer>
+<script defer>const sections=document.querySelectorAll(".step-section");const navLinks=document.querySelectorAll(".toc a");const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(l=>{l.style.color="";l.style.borderBottomColor="transparent";});const id=entry.target.id;const link=document.querySelector(`.toc a[href="#${id}"]`);if(link){link.style.color="#5E35B1";link.style.borderBottomColor="#5E35B1";}}});},{threshold:0.3});sections.forEach(s=>observer.observe(s));</script>
+</body>
+</html>

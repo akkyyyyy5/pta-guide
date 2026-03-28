@@ -1,0 +1,19 @@
+<script defer>
+        // �A�N�`E�u���j���[�n�C���C�`E
+        const sections = document.querySelectorAll('.step-section');
+        const navLinks = document.querySelectorAll('.toc a');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(l => l.style.color = '');
+                    const id = entry.target.id;
+                    const link = document.querySelector(`.toc a[href="#${id}"]`);
+                    if (link) {
+                        link.style.color = '#673ab7';
+                        link.style.borderBottomColor = '#673ab7';
+                    }
+                }
+            });
+        }, { threshold: 0.3 });
+        sections.forEach(s => observer.observe(s));
+    </script>
