@@ -11,14 +11,7 @@
 <nav class="toc">
     <div class="toc-inner">
         <a href="modern.html" style="color:var(--orange-primary);font-weight:900;">← 戻る</a>
-        <a href="modern_forms.html">📋 フォーム</a>
-        <a href="modern_docs.html">📝 ドキュメント</a>
-        <a href="modern_drive.html">📁 ドライブ</a>
-        <a href="modern_lineworks.html">💬 LINE WORKS</a>
-        <a href="modern_sheets.html">📊 シート</a>
-        <a href="modern_meet.html">📹 Meet</a>
-        <a href="modern_canva.html">🎨 Canva</a>
-        <a href="modern_chouseisan.html">📅 調整さん</a>
+        <a href="modern_forms.html">📋 Googleフォーム</a><a href="modern_docs.html">📝 Googleドキュメント</a><a href="modern_drive.html">📁 Googleドライブ</a><a href="modern_lineworks.html">💬 LINE</a><a href="modern_sheets.html">📊 スプレッドシート</a><a href="modern_meet.html">📹 Google</a><a href="modern_canva.html">🎨 Canva</a><a href="modern_chouseisan.html">📅 調整さん</a>
     </div>
 </nav>
 
@@ -39,9 +32,8 @@
             <p>Gmailアカウントがあれば、すぐに始められます</p>
         </div>
     </div>
-    <div class="step-body">
         <div class="instruction-text">
-            <a href="https://canva.com" target="_blank" class="text-link">canva.com</a><strong>www.<a href="https://canva.com" target="_blank" class="text-link">canva.com</a></strong></a>
+            ブラウザで <strong><a href="https://canva.com" target="_blank" class="text-link">canva.com</a></strong>
             にアクセスし、「Googleで続行」を選んでPTAのGmailアカウントでログインします。右上の「<strong>デザインを作成</strong>」ボタンから、作りたいもの（「チラシ」や「A4文書」など）を選びます。
         </div>
         <div class="mockup-wrap">
@@ -209,7 +201,8 @@
             </div>
         </div>
     </div>
-</section><div class="finish-banner"><div style="font-size:56px;margin-bottom:16px;">&#127881;</div><h2>お疲れさまでした！</h2><p>Canvaを使えば、もう以前のお便り作成には戻れません。<br>ぜひ次のイベント告知で何か1つ作ってみてください。</p></div>
+</section>
+<div class="finish-banner"><div style="font-size:56px;margin-bottom:16px;">&#127881;</div><h2>お疲れさまでした！</h2><p>Canvaを活用して、PTA運営をスマートに改善しましょう。</p></div>
 </main>
 
 <footer>
@@ -225,7 +218,7 @@
             }
         });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.step-section, .intro-box, .mockup-wrap, .finish-banner').forEach(el => {
+    document.querySelectorAll('.step-section, .intro-box, .mockup-wrap, .finish-banner, .point-box, .annotation, .warn-box').forEach(el => {
         el.classList.add('reveal');
         observer.observe(el);
     });

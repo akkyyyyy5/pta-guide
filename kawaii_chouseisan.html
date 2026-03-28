@@ -11,14 +11,7 @@
 <nav class="toc">
     <div class="toc-inner">
         <a href="kawaii.html" style="color:var(--orange-soft);font-weight:900;">← 戻る</a>
-        <a href="kawaii_forms.html">📋 フォーム</a>
-        <a href="kawaii_docs.html">📝 ドキュメント</a>
-        <a href="kawaii_drive.html">📁 ドライブ</a>
-        <a href="kawaii_lineworks.html">💬 LINE WORKS</a>
-        <a href="kawaii_sheets.html">📊 シート</a>
-        <a href="kawaii_meet.html">📹 Meet</a>
-        <a href="kawaii_canva.html">🎨 Canva</a>
-        <a href="kawaii_chouseisan.html">📅 調整さん</a>
+        <a href="kawaii_forms.html">📋 Googleフォーム</a><a href="kawaii_docs.html">📝 Googleドキュメント</a><a href="kawaii_drive.html">📁 Googleドライブ</a><a href="kawaii_lineworks.html">💬 LINE</a><a href="kawaii_sheets.html">📊 スプレッドシート</a><a href="kawaii_meet.html">📹 Google</a><a href="kawaii_canva.html">🎨 Canva</a><a href="kawaii_chouseisan.html">📅 調整さん</a>
     </div>
 </nav>
 
@@ -41,7 +34,7 @@
     </div>
     <div class="step-body">
         <div class="instruction-text">
-            <a href="https://chouseisan.com" target="_blank" class="text-link">chouseisan.com</a><strong><a href="https://chouseisan.com" target="_blank" class="text-link">chouseisan.com</a></strong></a>
+            ブラウザで <strong><a href="https://chouseisan.com" target="_blank" class="text-link">chouseisan.com</a></strong>
             にアクセスし、「<strong>イベントをつくる</strong>」をクリックします。イベント名（例：第3回 役員会）を入力し、カレンダーから候補となる日程を選択します。
         </div>
         <div class="mockup-wrap">
@@ -179,7 +172,8 @@
             会員登録をしておけば、自分が作ったイベントを後から一覧で確認したり、回答が追加されたときにメール通知を受け取ったりすることもできます。
         </div>
     </div>
-</section><div class="finish-banner"><div style="font-size:56px;margin-bottom:16px;">&#127881;</div><h2>お疲れさまでした！</h2><p>調整さんを使えば、LINEが日程調整の投稿で埋まることはありません。<br>ぜひ次の役員会で使ってみてください。</p></div>
+</section>
+<div class="finish-banner"><div style="font-size:56px;margin-bottom:16px;">&#127881;</div><h2>お疲れさまでした！</h2><p>調整さんを使って、楽しくラクにPTA活動を進めていきましょう♪</p></div>
 </main>
 
 <footer>
@@ -195,7 +189,7 @@
             }
         });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.step-section, .intro-box, .mockup-wrap, .finish-banner').forEach(el => {
+    document.querySelectorAll('.step-section, .intro-box, .mockup-wrap, .finish-banner, .point-box, .annotation, .warn-box').forEach(el => {
         el.classList.add('reveal');
         observer.observe(el);
     });

@@ -11,14 +11,7 @@
 <nav class="toc">
     <div class="toc-inner">
         <a href="kawaii.html" style="color:var(--orange-soft);font-weight:900;">← 戻る</a>
-        <a href="kawaii_forms.html">📋 フォーム</a>
-        <a href="kawaii_docs.html">📝 ドキュメント</a>
-        <a href="kawaii_drive.html">📁 ドライブ</a>
-        <a href="kawaii_lineworks.html">💬 LINE WORKS</a>
-        <a href="kawaii_sheets.html">📊 シート</a>
-        <a href="kawaii_meet.html">📹 Meet</a>
-        <a href="kawaii_canva.html">🎨 Canva</a>
-        <a href="kawaii_chouseisan.html">📅 調整さん</a>
+        <a href="kawaii_forms.html">📋 Googleフォーム</a><a href="kawaii_docs.html">📝 Googleドキュメント</a><a href="kawaii_drive.html">📁 Googleドライブ</a><a href="kawaii_lineworks.html">💬 LINE</a><a href="kawaii_sheets.html">📊 スプレッドシート</a><a href="kawaii_meet.html">📹 Google</a><a href="kawaii_canva.html">🎨 Canva</a><a href="kawaii_chouseisan.html">📅 調整さん</a>
     </div>
 </nav>
 
@@ -39,10 +32,8 @@
             <p><a href="https://meet.google.com" target="_blank" class="text-link">meet.google.com</a> を開いて「新しい会議を作成」するだけ</p>
         </div>
     </div>
-    <div class="step-body">
         <div class="instruction-text">
-            ブラウザで <strong><a href="https://meet.google.com" target="_blank" class="text-link">meet.google.com</a>" target="_blank"
-                    style="color:#1a73e8;"><a href="https://meet.google.com" target="_blank" class="text-link">meet.google.com</a></a></strong>
+            ブラウザで <strong><a href="https://meet.google.com" target="_blank" class="text-link">meet.google.com</a></strong>
             を開き、「<strong>新しい会議を作成</strong>」→「<strong>今すぐ開始</strong>」を選びます。会議リンクが発行されるので、それをコピーしてLINE WORKSなどで役員に送信します。
         </div>
         <div class="mockup-wrap">
@@ -280,8 +271,7 @@
     </div>
     <div class="step-body">
         <div class="instruction-text">
-            <a href="https://calendar.google.com" target="_blank"
-                style="color:#1a73e8;"><strong>calendar.google.com</strong></a> で新しい予定を作成するとき、「<strong>Google
+            <a href="https://calendar.google.com" target="_blank" class="text-link"><strong>calendar.google.com</strong></a> で新しい予定を作成するとき、「<strong>Google
                 Meetのビデオ会議を追加</strong>」ボタンを押すと、Meetのリンクが自動で予定に追加されます。ゲストにGmailアドレスを入れると役員全員に招待メールが届きます。
         </div>
         <div class="mockup-wrap">
@@ -337,7 +327,8 @@
             Gmailアカウントがあれば<strong>1対1は時間無制限、3人以上は60分まで無料</strong>。PTAの役員会（多くても8〜10名）なら十分に使えます。60分を超えたい場合は会議を一度終了して再接続すれば続けられます。
         </div>
     </div>
-</section><div class="finish-banner"><div style="font-size:56px;margin-bottom:16px;">&#127881;</div><h2>お疲れさまでした！</h2><p>Google Meetで、役員会が「学校に行かなくていい」になります。<br>最初の会議で操作を覚えれば、あとは全員が気軽に参加できます。</p></div>
+</section>
+<div class="finish-banner"><div style="font-size:56px;margin-bottom:16px;">&#127881;</div><h2>お疲れさまでした！</h2><p>Google Meetを使って、楽しくラクにPTA活動を進めていきましょう♪</p></div>
 </main>
 
 <footer>
@@ -353,7 +344,7 @@
             }
         });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.step-section, .intro-box, .mockup-wrap, .finish-banner').forEach(el => {
+    document.querySelectorAll('.step-section, .intro-box, .mockup-wrap, .finish-banner, .point-box, .annotation, .warn-box').forEach(el => {
         el.classList.add('reveal');
         observer.observe(el);
     });

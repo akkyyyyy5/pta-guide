@@ -11,21 +11,14 @@
 <nav class="toc">
     <div class="toc-inner">
         <a href="modern.html" style="color:var(--orange-primary);font-weight:900;">← 戻る</a>
-        <a href="modern_forms.html">📋 フォーム</a>
-        <a href="modern_docs.html">📝 ドキュメント</a>
-        <a href="modern_drive.html">📁 ドライブ</a>
-        <a href="modern_lineworks.html">💬 LINE WORKS</a>
-        <a href="modern_sheets.html">📊 シート</a>
-        <a href="modern_meet.html">📹 Meet</a>
-        <a href="modern_canva.html">🎨 Canva</a>
-        <a href="modern_chouseisan.html">📅 調整さん</a>
+        <a href="modern_forms.html">📋 Googleフォーム</a><a href="modern_docs.html">📝 Googleドキュメント</a><a href="modern_drive.html">📁 Googleドライブ</a><a href="modern_lineworks.html">💬 LINE</a><a href="modern_sheets.html">📊 スプレッドシート</a><a href="modern_meet.html">📹 Google</a><a href="modern_canva.html">🎨 Canva</a><a href="modern_chouseisan.html">📅 調整さん</a>
     </div>
 </nav>
 
 <main class="container">
 <!-- 調整さん 詳細ガイド -->
-<div class="point-box" >
-    <div class="label" >📅 調整さん について</div>
+<div class="point-box" style="background:#e0f2f1;border-left:4px solid #00897b;margin-bottom:32px;">
+    <div class="label" style="color:#00897b;">📅 調整さん について</div>
     調整さんは、面倒な日程調整を「URLを共有するだけ」で完結させる無料ツールです。参加者は会員登録不要で、名前と出欠（○△×）を入れるだけで回答できます。<strong>役員会や懇親会の日程を決める際</strong>に非常に便利です。
 </div>
 
@@ -41,7 +34,7 @@
     </div>
     <div class="step-body">
         <div class="instruction-text">
-            <a href="https://chouseisan.com" target="_blank" class="text-link">chouseisan.com</a><strong><a href="https://chouseisan.com" target="_blank" class="text-link">chouseisan.com</a></strong></a>
+            ブラウザで <strong><a href="https://chouseisan.com" target="_blank" class="text-link">chouseisan.com</a></strong>
             にアクセスし、「<strong>イベントをつくる</strong>」をクリックします。イベント名（例：第3回 役員会）を入力し、カレンダーから候補となる日程を選択します。
         </div>
         <div class="mockup-wrap">
@@ -179,7 +172,8 @@
             会員登録をしておけば、自分が作ったイベントを後から一覧で確認したり、回答が追加されたときにメール通知を受け取ったりすることもできます。
         </div>
     </div>
-</section><div class="finish-banner"><div style="font-size:56px;margin-bottom:16px;">&#127881;</div><h2>お疲れさまでした！</h2><p>調整さんを使えば、LINEが日程調整の投稿で埋まることはありません。<br>ぜひ次の役員会で使ってみてください。</p></div>
+</section>
+<div class="finish-banner"><div style="font-size:56px;margin-bottom:16px;">&#127881;</div><h2>お疲れさまでした！</h2><p>調整さんを活用して、PTA運営をスマートに改善しましょう。</p></div>
 </main>
 
 <footer>
@@ -195,7 +189,7 @@
             }
         });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.step-section, .intro-box, .mockup-wrap, .finish-banner').forEach(el => {
+    document.querySelectorAll('.step-section, .intro-box, .mockup-wrap, .finish-banner, .point-box, .annotation, .warn-box').forEach(el => {
         el.classList.add('reveal');
         observer.observe(el);
     });

@@ -1,21 +1,3 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Googleフォーム 活用ガイド | PTAデジタルツール | Kawaii Edition</title>
-<link rel="stylesheet" href="kawaii.css">
-</head>
-<body>
-
-<nav class="toc">
-    <div class="toc-inner">
-        <a href="kawaii.html" style="color:var(--orange-soft);font-weight:900;">← 戻る</a>
-        <a href="kawaii_forms.html">📋 Googleフォーム</a><a href="kawaii_docs.html">📝 Googleドキュメント</a><a href="kawaii_drive.html">📁 Googleドライブ</a><a href="kawaii_lineworks.html">💬 LINE</a><a href="kawaii_sheets.html">📊 スプレッドシート</a><a href="kawaii_meet.html">📹 Google</a><a href="kawaii_canva.html">🎨 Canva</a><a href="kawaii_chouseisan.html">📅 調整さん</a>
-    </div>
-</nav>
-
-<main class="container">
 <!-- Googleフォーム ステップ1〜5 -->
 <div class="point-box" style="background:#f3e5f5;border-left:4px solid #5E35B1;margin-bottom:32px;">
     <div class="label" style="color:#5E35B1;">💰 利用料金について</div>
@@ -313,26 +295,3 @@
 </section>
 
 <hr class="divider">
-<div class="finish-banner"><div style="font-size:56px;margin-bottom:16px;">&#127881;</div><h2>お疲れさまでした！</h2><p>Googleフォームを使って、楽しくラクにPTA活動を進めていきましょう♪</p></div>
-</main>
-
-<footer>
-    <p>柿生小学校PTA デジタル活用ガイド</p>
-    <p style="margin-top:6px;opacity:0.6;">Designed by Sweet & Friendly UI for PTA Moms</p>
-</footer>
-
-<script>
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('reveal');
-            }
-        });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.step-section, .intro-box, .mockup-wrap, .finish-banner, .point-box, .annotation, .warn-box').forEach(el => {
-        el.classList.add('reveal');
-        observer.observe(el);
-    });
-</script>
-</body>
-</html>
