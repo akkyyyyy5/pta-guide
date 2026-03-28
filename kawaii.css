@@ -356,3 +356,15 @@ footer {
 .reveal {
     animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
+
+/* --- Linked URLs in text --- */
+.text-link {
+    color: #E64A19;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-weight: 700;
+}
+
+.text-link:hover {
+    color: var(--orange-soft);
+}
