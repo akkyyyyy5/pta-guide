@@ -3,13 +3,13 @@
 :root {
     --bg-black: #000000;
     --bg-dark: #0a0a0a;
-    --card-bg: #151515;
+    --card-bg: #1c1c1e; /* 少し明るくして奥行きを出す */
     --orange-primary: #FF6D00;
     --orange-glow: rgba(255, 109, 0, 0.2);
     --text-white: #ffffff;
-    --text-silver: #a1a1a6;
-    --text-dark: #86868b;
-    --glass-bg: rgba(10, 10, 10, 0.8);
+    --text-silver: #d2d2d7; /* 明るいシルバーに変更 */
+    --text-dark: #a1a1a6;   /* 読みやすいグレーに変更 */
+    --glass-bg: rgba(10, 10, 10, 0.82);
     --border-white: rgba(255, 255, 255, 0.12);
     --ease-apple: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -359,22 +359,24 @@ footer p {
 }
 
 .point-box, .warn-box {
-    border-radius: 16px;
-    padding: 20px;
-    margin: 24px 0;
+    border-radius: 18px;
+    padding: 24px;
+    margin: 32px 0;
     font-size: 15px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-white);
+    line-height: 1.7;
 }
 
 .point-box {
-    background: rgba(255, 160, 0, 0.05);
-    border: 1px solid rgba(255, 160, 0, 0.2);
-    color: #ffd180;
+    border-left: 4px solid var(--orange-primary);
+    color: var(--text-silver);
 }
 
 .warn-box {
-    background: rgba(211, 47, 47, 0.05);
-    border: 1px solid rgba(211, 47, 47, 0.2);
-    color: #ff8a80;
+    border-left: 4px solid #ff453a;
+    color: #ff9f0a;
+    background: rgba(255, 69, 58, 0.05);
 }
 
 .label {
