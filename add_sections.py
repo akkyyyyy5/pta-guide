@@ -12,7 +12,7 @@ NEW_SECTIONS = '''
     </div>
     <div class="step-body">
       <div class="instruction-text">
-        LINE WORKSは、普段使いのLINEに似た操作感で使えるビジネス向けチャットツールです。<strong>非営利団体（PTAを含む）は無料で利用できる「フリープラン」</strong>が用意されており、役員間の連絡・グループトーク・ファイル共有をプライベートのLINEアカウントと混ぜずにすっきり管理できます。
+        LINE WORKSは、普段使いのLINEに似た操作感で使えるビジネス向けチャットツールです。<strong>非営利団体（PTAを含む）は無料で利用できる「フリープラン」</strong>が用意されており、メンバー間の連絡・グループトーク・ファイル共有をプライベートのLINEアカウントと混ぜずにすっきり管理できます。
       </div>
 
       <!-- モックアップ: LINE WORKS -->
@@ -41,7 +41,7 @@ NEW_SECTIONS = '''
               <div style="padding:10px 14px;display:flex;gap:10px;align-items:center;background:white;border-left:3px solid #00c300;">
                 <div style="width:36px;height:36px;background:linear-gradient(135deg,#00c300,#00a800);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:14px;font-weight:700;flex-shrink:0;">PTA</div>
                 <div>
-                  <div style="font-size:13px;font-weight:700;color:#202124;">📌 2025年度 役員会</div>
+                  <div style="font-size:13px;font-weight:700;color:#202124;">📌 2025年度 ミーティング</div>
                   <div style="font-size:11px;color:#9e9e9e;">田中さん：了解しました！</div>
                 </div>
               </div>
@@ -63,7 +63,7 @@ NEW_SECTIONS = '''
             <!-- チャット本文 -->
             <div style="flex:1;display:flex;flex-direction:column;background:white;">
               <div style="padding:10px 16px;border-bottom:1px solid #e0e0e0;font-size:13px;font-weight:700;color:#202124;display:flex;align-items:center;gap:8px;">
-                <span>📌 2025年度 役員会</span>
+                <span>📌 2025年度 ミーティング</span>
                 <span style="font-size:11px;color:#9e9e9e;font-weight:400;">8名</span>
               </div>
               <div style="flex:1;padding:14px 16px;display:flex;flex-direction:column;gap:12px;overflow:hidden;">
@@ -96,7 +96,7 @@ NEW_SECTIONS = '''
 
       <div class="annotation">
         <div class="annotation-circle" style="background:#00c300;">1</div>
-        <div class="annotation-text"><strong>グループトーク</strong>: 役員全体・係ごとなど複数のグループを作成可能。普段のLINEとは完全に分離できます。</div>
+        <div class="annotation-text"><strong>グループトーク</strong>: メンバー全体・係ごとなど複数のグループを作成可能。普段のLINEとは完全に分離できます。</div>
       </div>
       <div class="annotation">
         <div class="annotation-circle" style="background:#00c300;">2</div>
@@ -108,8 +108,8 @@ NEW_SECTIONS = '''
         <ol style="padding-left:20px;margin-top:6px;">
           <li><a href="https://line.worksmobile.com/jp/" target="_blank" style="color:#1a73e8;">line.worksmobile.com</a> にアクセスして「無料で始める」をクリック</li>
           <li>PTAの代表者（会長）のメールアドレスでアカウント作成</li>
-          <li>「管理者画面」から役員のメールアドレスを招待</li>
-          <li>招待された役員はスマホアプリをインストールしてログイン</li>
+          <li>「管理者画面」からメンバーのメールアドレスを招待</li>
+          <li>招待されたメンバーはスマホアプリをインストールしてログイン</li>
         </ol>
       </div>
       <div class="point-box">
@@ -118,7 +118,7 @@ NEW_SECTIONS = '''
       </div>
       <div class="warn-box">
         <div class="label">⚠️ 個人LINEとは別物です</div>
-        LINE WORKSは普段のLINEとは別のアプリです。役員のプライベートLINEアカウントに連絡が届くことはなく、業務と私生活をきっちり分離できます。
+        LINE WORKSは普段のLINEとは別のアプリです。メンバーのプライベートLINEアカウントに連絡が届くことはなく、業務と私生活をきっちり分離できます。
       </div>
     </div>
   </section>
@@ -136,7 +136,7 @@ NEW_SECTIONS = '''
     </div>
     <div class="step-body">
       <div class="instruction-text">
-        GoogleスプレッドシートはExcelのオンライン版です。<strong>役員名簿・会計帳簿・イベント進捗表など、PTAの管理業務に必須の表計算</strong>をクラウド上で管理できます。Googleフォームの回答が自動的にスプレッドシートに集まるため、集計の手間がゼロになります。
+        GoogleスプレッドシートはExcelのオンライン版です。<strong>メンバー名簿・会計帳簿・イベント進捗表など、PTAの管理業務に必須の表計算</strong>をクラウド上で管理できます。Googleフォームの回答が自動的にスプレッドシートに集まるため、集計の手間がゼロになります。
       </div>
 
       <!-- モックアップ: スプレッドシート -->
@@ -166,7 +166,7 @@ NEW_SECTIONS = '''
           </div>
           <!-- シートタブ -->
           <div style="background:#f8f9fc;border-bottom:1px solid #e0e0e0;padding:0 16px;display:flex;gap:0;">
-            <div style="padding:8px 16px;font-size:12px;background:white;border:1px solid #e0e0e0;border-bottom:none;border-radius:4px 4px 0 0;color:#43a047;font-weight:700;">👥 役員名簿</div>
+            <div style="padding:8px 16px;font-size:12px;background:white;border:1px solid #e0e0e0;border-bottom:none;border-radius:4px 4px 0 0;color:#43a047;font-weight:700;">👥 メンバー名簿</div>
             <div style="padding:8px 16px;font-size:12px;color:#5f6368;">💰 会計</div>
             <div style="padding:8px 16px;font-size:12px;color:#5f6368;">🌟 星空観察イベント進捗</div>
             <div style="padding:8px 16px;font-size:12px;color:#5f6368;">📊 フォーム回答</div>
@@ -226,14 +226,14 @@ NEW_SECTIONS = '''
 
       <div class="annotation">
         <div class="annotation-circle" style="background:#43a047;">💡</div>
-        <div class="annotation-text">シートを複数タブに分けると管理が楽です。<strong>「役員名簿」「会計」「イベント進捗」「フォーム回答」</strong>の4シートで一本化するのがおすすめです。</div>
+        <div class="annotation-text">シートを複数タブに分けると管理が楽です。<strong>「メンバー名簿」「会計」「イベント進捗」「フォーム回答」</strong>の4シートで一本化するのがおすすめです。</div>
       </div>
 
       <div class="point-box">
         <div class="label">💡 おすすめのシート構成</div>
         <table style="width:100%;border-collapse:collapse;margin-top:8px;font-size:13px;">
           <tr><th style="text-align:left;padding:6px 8px;background:#f5f5f5;border:1px solid #e0e0e0;">シート名</th><th style="text-align:left;padding:6px 8px;background:#f5f5f5;border:1px solid #e0e0e0;">管理する内容</th></tr>
-          <tr><td style="padding:6px 8px;border:1px solid #e0e0e0;">👥 役員名簿</td><td style="padding:6px 8px;border:1px solid #e0e0e0;">氏名・担当・学年・連絡先</td></tr>
+          <tr><td style="padding:6px 8px;border:1px solid #e0e0e0;">👥 メンバー名簿</td><td style="padding:6px 8px;border:1px solid #e0e0e0;">氏名・担当・学年・連絡先</td></tr>
           <tr><td style="padding:6px 8px;border:1px solid #e0e0e0;">💰 会計</td><td style="padding:6px 8px;border:1px solid #e0e0e0;">収支・領収書番号・残高（SUM関数で自動計算）</td></tr>
           <tr><td style="padding:6px 8px;border:1px solid #e0e0e0;">🌟 イベント進捗</td><td style="padding:6px 8px;border:1px solid #e0e0e0;">準備タスク・担当者・期限・完了チェックボックス</td></tr>
           <tr><td style="padding:6px 8px;border:1px solid #e0e0e0;">📊 フォーム回答</td><td style="padding:6px 8px;border:1px solid #e0e0e0;">Googleフォームから自動で流れ込む回答データ</td></tr>
@@ -254,12 +254,12 @@ NEW_SECTIONS = '''
       <div class="step-number" style="background:linear-gradient(135deg,#0277bd,#039be5);box-shadow:0 4px 12px rgba(3,155,229,0.35);">📹</div>
       <div class="step-title-group">
         <h2>Google Meet でオンライン会議を取り入れる</h2>
-        <p>学校に行かなくてもいい。自宅から5分で役員会</p>
+        <p>学校に行かなくてもいい。自宅から5分で会議</p>
       </div>
     </div>
     <div class="step-body">
       <div class="instruction-text">
-        Google Meetは、Googleが提供する無料のビデオ会議ツールです。<strong>Gmailアカウントがあれば今すぐ使えます</strong>。役員会・打ち合わせを完全オンラインにするだけで、「子どものお迎えがある」「仕事が終わらない」といった参加ハードルが一気に下がります。星空観察イベントの事前打ち合わせなど、ちょっとした確認にも最適です。
+        Google Meetは、Googleが提供する無料のビデオ会議ツールです。<strong>Gmailアカウントがあれば今すぐ使えます</strong>。会議・打ち合わせを完全オンラインにするだけで、「子どものお迎えがある」「仕事が終わらない」といった参加ハードルが一気に下がります。星空観察イベントの事前打ち合わせなど、ちょっとした確認にも最適です。
       </div>
 
       <!-- モックアップ: Google Meet -->
@@ -325,22 +325,22 @@ NEW_SECTIONS = '''
       </div>
       <div class="annotation">
         <div class="annotation-circle" style="background:#039be5;">3</div>
-        <div class="annotation-text"><strong>Googleカレンダーと連携</strong>: Googleカレンダーで会議の予定を作ると、MeetのリンクがURL付きで自動生成されます。招待状を役員全員に送ればリマインドも兼ねられます。</div>
+        <div class="annotation-text"><strong>Googleカレンダーと連携</strong>: Googleカレンダーで会議の予定を作ると、MeetのリンクがURL付きで自動生成されます。招待状をメンバー全員に送ればリマインドも兼ねられます。</div>
       </div>
 
       <div class="point-box">
         <div class="label">💡 よくある使い方パターン（PTA版）</div>
         <table style="width:100%;border-collapse:collapse;margin-top:8px;font-size:13px;">
           <tr><th style="text-align:left;padding:6px 8px;background:#f5f5f5;border:1px solid #e0e0e0;">場面</th><th style="text-align:left;padding:6px 8px;background:#f5f5f5;border:1px solid #e0e0e0;">活用方法</th></tr>
-          <tr><td style="padding:6px 8px;border:1px solid #e0e0e0;">役員会（月1回）</td><td style="padding:6px 8px;border:1px solid #e0e0e0;">全員オンラインで30分以内に終わらせる</td></tr>
+          <tr><td style="padding:6px 8px;border:1px solid #e0e0e0;">会議（月1回）</td><td style="padding:6px 8px;border:1px solid #e0e0e0;">全員オンラインで30分以内に終わらせる</td></tr>
           <tr><td style="padding:6px 8px;border:1px solid #e0e0e0;">イベント打ち合わせ</td><td style="padding:6px 8px;border:1px solid #e0e0e0;">スプレッドシート進捗表を画面共有しながら確認</td></tr>
           <tr><td style="padding:6px 8px;border:1px solid #e0e0e0;">急ぎの相談</td><td style="padding:6px 8px;border:1px solid #e0e0e0;">LINE WORKSでリンクを送り、即席でMeet開始</td></tr>
-          <tr><td style="padding:6px 8px;border:1px solid #e0e0e0;">新役員への引き継ぎ</td><td style="padding:6px 8px;border:1px solid #e0e0e0;">画面録画機能で説明動画を作成・保存</td></tr>
+          <tr><td style="padding:6px 8px;border:1px solid #e0e0e0;">新メンバーへの引き継ぎ</td><td style="padding:6px 8px;border:1px solid #e0e0e0;">画面録画機能で説明動画を作成・保存</td></tr>
         </table>
       </div>
       <div class="point-box">
         <div class="label">💡 無料で使える時間は？</div>
-        Googleアカウントがあれば、<strong>1対1の会議は無制限</strong>、3人以上も<strong>60分まで無料</strong>（2024年現在）。PTAの役員会（30分程度）なら問題なく無料で使えます。
+        Googleアカウントがあれば、<strong>1対1の会議は無制限</strong>、3人以上も<strong>60分まで無料</strong>（2024年現在）。PTAの会議（30分程度）なら問題なく無料で使えます。
       </div>
     </div>
   </section>

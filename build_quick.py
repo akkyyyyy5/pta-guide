@@ -108,7 +108,7 @@ js = (
 
 # 本文組み立て
 google_header = '<div style="font-size:18px;font-weight:900;color:#5E35B1;margin:0 0 24px;border-bottom:2px solid #D1C4E9;padding-bottom:8px;">🔷 Google の便利なツール（すべて無料）</div>'
-chat_header = '<div style="font-size:18px;font-weight:900;color:#00a800;margin:40px 0 24px;border-bottom:2px solid #e8f5e9;padding-bottom:8px;">💬 役員間の連絡ツール（別サービス）</div>'
+chat_header = '<div style="font-size:18px;font-weight:900;color:#00a800;margin:40px 0 24px;border-bottom:2px solid #e8f5e9;padding-bottom:8px;">💬 メンバー間の連絡ツール（別サービス）</div>'
 other_header = '<div style="font-size:18px;font-weight:900;color:#7d2ae8;margin:40px 0 24px;border-bottom:2px solid #f3e5f5;padding-bottom:8px;">🎨 制作・調整ツール（外部サービス）</div>'
 
 # body_p4.html の中身から LINE WORKS セクションを抽出して分離する必要があるか

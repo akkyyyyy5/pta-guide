@@ -42,8 +42,8 @@ lw_content = lw_content.replace(
 )
 if "※上記リンク先は一般のLINE WORKSのページです" not in lw_content:
     lw_content = lw_content.replace(
-        '<strong>PTAなどの非営利団体は、専用のプランによって大容量がずっと無料で利用できます。</strong>',
-        '<strong>PTAなどの非営利団体は、専用のプランによって大容量がずっと無料で利用できます。</strong>\n    <p style="font-size:12px;color:#777;margin-top:8px;font-weight:700;">※記載の既存リンク（line.worksmobile.com等）は一般のLINE WORKSのリンクです。「非営利団体様向け特別プラン」をご希望の場合は、ページ下部の専用リンクをご利用ください。</p>'
+        '<strong>PTAなどの非営利団体は、専用のプランによって大容量が無料で利用できます。</strong>',
+        '<strong>PTAなどの非営利団体は、専用のプランによって大容量が無料で利用できます。</strong>\n    <p style="font-size:12px;color:#777;margin-top:8px;font-weight:700;">※記載の既存リンク（line.worksmobile.com等）は一般のLINE WORKSのリンクです。「非営利団体様向け特別プラン」をご希望の場合は、ページ下部の専用リンクをご利用ください。</p>'
     )
 if "一般のLINE WORKSのリンク" not in lw_content.split('instruction-text')[1]:
     lw_content = lw_content.replace(
