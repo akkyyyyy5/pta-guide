@@ -86,7 +86,7 @@ def get_modern_shell(tool_id, body_html):
 
 <footer>
     <p>柿生小学校PTA デジタル活用ガイド</p>
-    <p style="margin-top:6px;opacity:0.6;">Designed by Apple-style Modern UI for PTA</p>
+    <p style="margin-top:6px;opacity:0.6;">Designed by Akiyuki Hayashi, PTA President, FY2025</p>
 </footer>
 
 <script>
@@ -133,7 +133,7 @@ def get_kawaii_shell(tool_id, body_html):
 
 <footer>
     <p>柿生小学校PTA デジタル活用ガイド</p>
-    <p style="margin-top:6px;opacity:0.6;">Designed by Sweet & Friendly UI for PTA Moms</p>
+    <p style="margin-top:6px;opacity:0.6;">Designed by Akiyuki Hayashi, PTA President, FY2025</p>
 </footer>
 
 <script>
